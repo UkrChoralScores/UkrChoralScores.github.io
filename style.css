@@ -218,40 +218,81 @@ img.responsive {
   height: 100%;
 }
 
+/* Використовуємо твої стилі, додаємо лише необхідні для новин */
+
 .news-section {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa; /* світло-сірий фон */
+  background-color: #f8f9fa;
 }
 
 .news-item {
-  transition: box-shadow 0.3s ease;
   cursor: default;
+  transition: box-shadow 0.3s ease;
 }
 
 .news-item:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.toggle-btn {
-  cursor: pointer;
-  background: none;
+/* Кнопка в стилі .btn */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00416a, #799f0c);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
   border: none;
-  padding: 0;
-  font-size: 1rem;
-  outline-offset: 2px;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #799f0c, #00416a);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Текст повний прихований спочатку */
 .news-full {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin-top: 0;
+}
+
+/* Показуємо текст з плавним розгортанням */
+.news-full.show {
+  max-height: 400px; /* достатньо для тексту */
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+/* Анімація появи новин */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
   opacity: 0;
 }
 
-.news-full.show {
-  max-height: 400px; /* приблизно для тексту */
-  opacity: 1;
-  margin-top: 0.5rem;
+.fade-in:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==== ANIMATIONS ==== */
