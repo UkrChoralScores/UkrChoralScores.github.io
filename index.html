@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UkrChoralScores — Головна</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="index.html">UkrChoralScores</a>
+      <form id="searchForm" class="search-form" onsubmit="return false;">
+        <input id="searchInput" placeholder="Пошук партитур, авторів, творів..." aria-label="search">
+      </form>
+      <nav class="header-actions">
+        <a class="btn ghost" href="news.html">Новини</a>
+        <a class="btn" href="shop.html">Крамниця</a>
+        <a class="btn outline" href="#" id="loginBtn">Увійти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Українські хорові партитури — відкривай, слухай, співай</h1>
+          <p class="lead">Колекція народних, духовних і сучасних обробок для хорів. Завантажуй PDF або купуй друковані видання.</p>
+          <div class="hero-cta">
+            <a href="folk.html" class="btn large">Переглянути партитури</a>
+            <a href="#" class="btn ghost">Додати партитуру</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <!-- placeholder artwork / нотна картка -->
+          <div class="score-placeholder">ПАРТИТУРА</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container recent-section">
+      <div class="section-header">
+        <h2>Нещодавно додані партитури</h2>
+        <a href="folk.html" class="link">Переглянути всі</a>
+      </div>
+
+      <div id="recentGrid" class="grid cards-grid">
+        <!-- Cards injected by script.js -->
+      </div>
+    </section>
+
+    <section class="container news-preview">
+      <div class="section-header">
+        <h2>Новини хорового життя України</h2>
+        <a href="news.html" class="link">Всі новини</a>
+      </div>
+      <div class="grid news-grid">
+        <article class="news-card">
+          <h3>Фестиваль хорової музики — Київ, вересень</h3>
+          <p class="muted">Анонс події, запрошення колективів та умови участі.</p>
+        </article>
+        <article class="news-card">
+          <h3>Видано нову збірку партитур</h3>
+          <p class="muted">Колекція обробок народних пісень для студентських хорів.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>UkrChoralScores</h4>
+        <p>Українські хорові партитури — з любов'ю до спільнот і традицій.</p>
+      </div>
+      <div>
+        <h5>Розділи</h5>
+        <ul>
+          <li><a href="folk.html">Народні пісні</a></li>
+          <li><a href="authors.html">Автори</a></li>
+          <li><a href="spiritual.html">Духовні твори</a></li>
+          <li><a href="shop.html">Крамниця</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Контакти</h5>
+        <p>email: info@ukrchora lscores.example</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© UkrChoralScores — усі права захищені</div>
+  </footer>
+
+  <div id="loginModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close" id="closeModal">×</button>
+      <h3>Увійти (чернетка)</h3>
+      <form id="loginForm" onsubmit="return false;">
+        <label>Логін<input id="loginUser" /></label>
+        <label>Пароль<input id="loginPass" type="password" /></label>
+        <div class="modal-actions">
+          <button class="btn" id="doLogin">Увійти</button>
+          <button class="btn ghost" id="cancelLogin">Скасувати</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
