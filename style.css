@@ -218,6 +218,22 @@ img.responsive {
   height: 100%;
 }
 
+ /* Новини */
+.news-card {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+  border-left: 4px solid var(--olive);
+  margin-bottom: 1rem;
+ }
+ .news-card h4 {
+   color: #00416a;
+   margin-bottom: 0.5rem;  }
+ .news-card p {
+   color: #222;
+ }
+
 /* ==== ANIMATIONS ==== */
 .fade-in {
   animation: fadeIn 1s ease-in forwards;
