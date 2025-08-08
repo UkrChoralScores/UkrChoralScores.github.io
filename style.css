@@ -224,12 +224,8 @@ img.responsive {
 }
 
 .news-item {
+  transition: box-shadow 0.3s ease;
   cursor: default;
-  transition: background-color 0.3s ease;
-}
-
-.news-item:hover {
-  background-color: #f1f5f9; /* легкий hover для читабельності */
 }
 
 .toggle-btn {
@@ -253,31 +249,6 @@ img.responsive {
   max-height: 400px;
   opacity: 1;
   margin-top: 0.5rem;
-}
-
-/* Анімація появи */
-.fade-in {
-  animation: fadeIn 0.6s ease forwards;
-  opacity: 0;
-}
-
-.fade-in:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.fade-in:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ==== ANIMATIONS ==== */
