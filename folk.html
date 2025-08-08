@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Народні пісні — UkrChoralScores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header (reuse) -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="index.html">UkrChoralScores</a>
+      <form id="searchForm2" class="search-form" onsubmit="return false;">
+        <input id="searchInput2" placeholder="Пошук...">
+      </form>
+      <nav class="header-actions">
+        <a class="btn ghost" href="news.html">Новини</a>
+        <a class="btn" href="shop.html">Крамниця</a>
+        <a class="btn outline" href="#" id="loginBtn2">Увійти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Народні пісні</h1>
+    <p class="muted">Поширені та авторські обробки народних пісень для хорів.</p>
+
+    <div class="filters-row">
+      <select id="filterVoice">
+        <option value="all">Усі склади</option>
+        <option value="saat">SATB</option>
+        <option value="ssa">SSA</option>
+      </select>
+      <select id="filterMood">
+        <option value="all">Усі</option>
+        <option value="lively">Жваві</option>
+        <option value="lyrical">Ліричні</option>
+      </select>
+    </div>
+
+    <div id="scoresList" class="list-scores">
+      <!-- rows injected by script -->
+    </div>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="container footer-grid">
+      <div>
+        <h4>UkrChoralScores</h4>
+        <p>Колекція українських партитур</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
