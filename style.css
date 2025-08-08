@@ -107,6 +107,20 @@ header {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* === Новини (як секція) === */
+section.bg-[var(--accent)] {
+  background-color: var(--accent);
+}
+section.bg-[var(--accent)] p {
+  color: #ffd700;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+section.bg-[var(--accent)] p.italic {
+  font-style: italic;
+  color: #4c633d;
+}
+
 /* ==== CARDS ==== */
 .card {
   background: #fff;
