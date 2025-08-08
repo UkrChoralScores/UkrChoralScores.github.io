@@ -118,25 +118,5 @@
     });
   </script>
 
-<script>
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const newsItem = btn.closest('.news-item');
-      const fullText = newsItem.querySelector('.news-full');
-
-      const isShown = fullText.classList.contains('show');
-      if (isShown) {
-        fullText.classList.remove('show');
-        btn.textContent = 'Детальніше';
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        fullText.classList.add('show');
-        btn.textContent = 'Приховати';
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-</script>
-
 </body>
 </html>
