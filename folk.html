@@ -66,3 +66,61 @@
       <p class="text-lg mb-6">Онлайн бібліотека української хорової музики</p>
     </div>
   </section>
+
+  <!-- Футер -->
+  <footer class="bg-indigo-600 text-white py-10 mt-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-bold mb-4">UkrChoralScores</h3>
+        <p>Онлайн бібліотека</p>
+        <p>української хорової музики</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">Навігація</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="hover:underline">Головна</a></li>
+          <li><a href="folk.html" class="hover:underline">Народні пісні</a></li>
+          <li><a href="authors.html" class="hover:underline">Автори</a></li>
+          <li><a href="shop.html" class="hover:underline">Магазин</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">Контакти</h3>
+        <p>Email: ukrchoralscores.github.io</p>
+        <p>Telegram: t.me/ukrchoralscores</p>
+      </div>
+    </div>
+    <div class="text-center mt-6 border-t border-indigo-400 pt-4 text-sm">
+      © 2025 UkrChoralScores. Всі права захищені.
+    </div>
+  </footer>
+
+  <!-- JS для мобільного меню -->
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+<script>
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newsItem = btn.closest('.news-item');
+      const fullText = newsItem.querySelector('.news-full');
+
+      const isShown = fullText.classList.contains('show');
+      if (isShown) {
+        fullText.classList.remove('show');
+        btn.textContent = 'Детальніше';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        fullText.classList.add('show');
+        btn.textContent = 'Приховати';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
