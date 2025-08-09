@@ -62,41 +62,75 @@
   <!-- Заголовок сторінки -->
   <section class="page-header">
     <h1>Народні пісні</h1>
-    <p>Збірка українських народних пісень у хорових обробках</p>
+    <p>Українські народні мелодії та їх обробки для хору</p>
   </section>
 
-  <!-- Список партитур -->
-  <section class="scores-section">
+  <!-- Пісня 1 -->
+  <section class="song-block">
+    <h2>Ніч яка місячна</h2>
     <div class="scores-grid">
-
       <div class="score-card hidden">
-        <img src="images/song1.jpg" alt="Ніч яка місячна">
-        <h3>Ніч яка місячна</h3>
-        <p>Обробка для мішаного хору a cappella</p>
-        <a href="nich-yaka-misachna.html" class="btn">Переглянути</a>
+        <img src="images/nich-melody.jpg" alt="Ніч яка місячна - Мелодія">
+        <h3>Мелодія</h3>
+        <div class="buttons">
+          <a href="#" class="btn">Переглянути</a>
+          <a href="#" class="btn download">Викачати</a>
+        </div>
       </div>
-
       <div class="score-card hidden">
-        <img src="images/song2.jpg" alt="Червона рута">
-        <h3>Червона рута</h3>
-        <p>Обробка для жіночого хору</p>
-        <a href="#" class="btn">Переглянути</a>
+        <img src="images/nich-samuilov.jpg" alt="Ніч яка місячна - Обр. С. Самуйлова">
+        <h3>Обр. С. Самуйлова</h3>
+        <div class="buttons">
+          <a href="#" class="btn">Переглянути</a>
+          <a href="#" class="btn download">Викачати</a>
+        </div>
       </div>
+    </div>
+  </section>
 
+  <!-- Пісня 2 -->
+  <section class="song-block">
+    <h2>Цвіте терен</h2>
+    <div class="scores-grid">
       <div class="score-card hidden">
-        <img src="images/song3.jpg" alt="Їхав козак за Дунай">
-        <h3>Їхав козак за Дунай</h3>
-        <p>Обробка для чоловічого хору</p>
-        <a href="#" class="btn">Переглянути</a>
+        <img src="images/terem-melody.jpg" alt="Цвіте терен - Мелодія">
+        <h3>Мелодія</h3>
+        <div class="buttons">
+          <a href="#" class="btn">Переглянути</a>
+          <a href="#" class="btn download">Викачати</a>
+        </div>
       </div>
-
       <div class="score-card hidden">
-        <img src="images/song4.jpg" alt="Ой у вишневому саду">
-        <h3>Ой у вишневому саду</h3>
-        <p>Обробка для мішаного хору</p>
-        <a href="#" class="btn">Переглянути</a>
+        <img src="images/terem-avdiievskyi.jpg" alt="Цвіте терен - Обр. А. Авдієвського">
+        <h3>Обр. А. Авдієвського</h3>
+        <div class="buttons">
+          <a href="#" class="btn">Переглянути</a>
+          <a href="#" class="btn download">Викачати</a>
+        </div>
       </div>
+    </div>
+  </section>
 
+  <!-- Пісня 3 -->
+  <section class="song-block">
+    <h2>Ой чий то кінь стоїть</h2>
+    <div class="scores-grid">
+      <div class="score-card hidden">
+        <img src="images/kinn-melody.jpg" alt="Ой чий то кінь стоїть - Мелодія">
+        <h3>Мелодія</h3>
+        <div class="buttons">
+          <a href="#" class="btn">Переглянути</a>
+          <a href="#" class="btn download">Викачати</a>
+        </div>
+      </div>
+      <div class="score-card hidden">
+        <img src="images/kinn-avdiievskyi.jpg" alt="Ой чий то кінь стоїть - Обр. А. Авдієвського">
+        <h3>Обр. А. Авдієвського</h3>
+        <div class="buttons">
+          <a href="#" class="btn">Переглянути</a>
+          <a href="#" class="btn download">Викачати</a>
+        </div>
+      </div>
     </div>
   </section>
   
@@ -133,6 +167,22 @@
     document.getElementById('menu-btn').addEventListener('click', function() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+  </script>
+
+    <!-- JS для анімації з затримкою -->
+  <script>
+    const hiddenElements = document.querySelectorAll('.hidden');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('show');
+          }, index * 200); // затримка 200мс між картками
+        }
+      });
+    }, { threshold: 0.2 });
+
+    hiddenElements.forEach(el => observer.observe(el));
   </script>
 
 </body>
