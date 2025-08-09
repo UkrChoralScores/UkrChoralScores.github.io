@@ -237,18 +237,60 @@ img.responsive {
   outline-offset: 2px;
 }
 
+.news-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.news-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.news-item {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.news-short {
+  font-size: 1rem;
+  color: #333;
+}
+
 .news-full {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  margin-top: 0;
+  transition: all 0.5s ease-in-out;
 }
 
-.news-full.show {
-  max-height: 400px;
+.news-item.open .news-full {
+  max-height: 300px; /* можна збільшити при потребі */
   opacity: 1;
-  margin-top: 0.5rem;
+  margin-top: 10px;
+}
+
+.read-more {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: #1d4ed8;
 }
 
 /* ==== ANIMATIONS ==== */
