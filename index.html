@@ -99,34 +99,35 @@
     </div>
   </section>
 
-  <section class="container mx-auto py-16 fade-in">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="img/part.jpg" alt="Пісня 1" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold">Ніч яка місячна</h3>
-          <p class="text-gray-600 mb-4">Українська народна пісня</p>
-          <a href="nich-yaka-misachna.html" class="text-indigo-600 hover:underline">Детальніше</a>
-        </div>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="img/part.jpg" alt="Пісня 2" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold">Сонце заходить</h3>
-          <p class="text-gray-600 mb-4">С. Людкевич</p>
-          <a href="#" class="text-indigo-600 hover:underline">Детальніше</a>
-        </div>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="img/part.jpg" alt="Пісня 3" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold">Ой, у полі, полі</h3>
-          <p class="text-gray-600 mb-4">Обр. П. Козицького</p>
-          <a href="#" class="text-indigo-600 hover:underline">Детальніше</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="news-section">
+  <h2 class="news-title">Останні новини</h2>
+
+  <div class="news-item">
+    <h3>🎵 Запуск нового розділу сайту</h3>
+    <p class="news-short">
+      Ми раді повідомити, що на нашому сайті з’явився новий розділ з духовними піснями...
+    </p>
+    <p class="news-full">
+      Ми раді повідомити, що на нашому сайті з’явився новий розділ з духовними піснями, де ви зможете
+      знайти унікальні партитури та записи. Розділ буде поповнюватися щотижня, тож не забудьте
+      додати сайт у закладки!
+    </p>
+    <button class="read-more">Детальніше</button>
+  </div>
+
+  <div class="news-item">
+    <h3>🎼 Конкурс хорових колективів</h3>
+    <p class="news-short">
+      Запрошуємо всі хорові колективи України взяти участь у щорічному фестивалі "Голос Нації"...
+    </p>
+    <p class="news-full">
+      Запрошуємо всі хорові колективи України взяти участь у щорічному фестивалі "Голос Нації".
+      У програмі: майстер-класи від провідних диригентів, відкриті репетиції та гала-концерт у
+      Національній філармонії.
+    </p>
+    <button class="read-more">Детальніше</button>
+  </div>
+</section>
   
 <section class="news-section max-w-3x1 mx-auto px-6 py-10">
   <h2 class="text-3xl font-bold mb-8 text-left">Новини</h2>
@@ -192,20 +193,16 @@
   </script>
 
 <script>
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const newsItem = btn.closest('.news-item');
-      const fullText = newsItem.querySelector('.news-full');
+  document.querySelectorAll('.read-more').forEach(button => {
+    button.addEventListener('click', () => {
+      const newsItem = button.closest('.news-item');
+      newsItem.classList.toggle('open');
 
-      const isShown = fullText.classList.contains('show');
-      if (isShown) {
-        fullText.classList.remove('show');
-        btn.textContent = 'Детальніше';
-        btn.setAttribute('aria-expanded', 'false');
+      // Зміна тексту кнопки
+      if (newsItem.classList.contains('open')) {
+        button.textContent = 'Згорнути';
       } else {
-        fullText.classList.add('show');
-        btn.textContent = 'Приховати';
-        btn.setAttribute('aria-expanded', 'true');
+        button.textContent = 'Детальніше';
       }
     });
   });
