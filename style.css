@@ -220,66 +220,72 @@ img.responsive {
 
 /* Секція новин */
 .news-section {
-  padding: 50px 0;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
 }
 
-.news-list {
+.news-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  transition: transform 0.3s ease;
 }
 
-.news-item {
-  background: #fff5e1;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.news-item:hover {
+.news-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.news-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .news-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 10px;
-  color: #a35a00;
+  color: #222;
 }
 
-.news-short {
-  font-size: 1rem;
-  margin-bottom: 10px;
+.news-text {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.news-full {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease, opacity 0.6s ease;
-}
-
-.news-item.open .news-full {
-  max-height: 500px;
-  opacity: 1;
-}
-
-.read-more {
+.news-btn {
   display: inline-block;
-  padding: 8px 16px;
-  background: #ff9900;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 10px 18px;
+  background-color: #b22222; /* Бордовий як у партитурах */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
   transition: background 0.3s ease;
 }
 
-.read-more:hover {
-  background: #cc7a00;
+.news-btn:hover {
+  background-color: #8b1a1a;
 }
 
 /* Анімація появи */
