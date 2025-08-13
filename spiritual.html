@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Духовні твори — UkrChoralScores</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/ui.js"></script>
+  <script defer src="assets/scripts.js"></script>
+  <script defer src="assets/data-loader.js"></script>
+  <!-- PDF.js (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.min.js"></script>
+  <script>window.pdfjsLib && (pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.min.js");</script>
+  <script defer src="assets/pdf-viewer.js"></script>
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="UkrChoralScores — Головна">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="2" y="4" width="20" height="16" rx="3" class="logo-rect"/>
+          <path d="M6 8h12M6 12h12M6 16h8" class="logo-lines"/>
+        </svg>
+        <span class="brand-text">UkrChoralScores</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Головне меню">
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="folk.html" class="nav-link">Народні</a>
+        <a href="authors.html" class="nav-link">Автори</a>
+        <a href="spiritual.html" class="nav-link">Духовні</a>
+        <a href="shop.html" class="nav-cta">Крамниця</a>
+      </nav>
+
+      <div class="header-actions">
+        <label class="search-wrapper" for="site-search">
+          <input id="site-search" class="search" placeholder="Пошук партитур, авторів..." aria-label="Пошук" />
+          <button class="icon-btn" aria-hidden="true">🔎</button>
+        </label>
+        <a class="btn-outline" href="#">Увійти</a>
+        <button class="menu-toggle" aria-label="Відкрити меню" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+<main class="wrap">
+  <section class="section">
+    <h1>Духовні твори</h1>
+    <div class="scores-grid" data-loader="spiritual"></div>
+  </section>
+</main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap footer-grid">
+      <div class="col">
+        <h4>UkrChoralScores</h4>
+        <p>Колекція українських хорових партитур. Підтримуємо хорову культуру України.</p>
+      </div>
+      <div class="col">
+        <h5>Розділи</h5>
+        <ul>
+          <li><a href="folk.html">Народні пісні</a></li>
+          <li><a href="authors.html">Автори</a></li>
+          <li><a href="spiritual.html">Духовні</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h5>Контакти</h5>
+        <p>email@ukrchoralscores.example</p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">© UkrChoralScores — Всі права захищено</div>
+  </footer>
+  <!-- Global PDF Modal -->
+  <div id="pdf-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Перегляд партитури">
+      <div class="modal-toolbar">
+        <button class="btn-icon" data-action="prev" title="Попередня сторінка">←</button>
+        <span class="page-indicator"><b id="page-num">1</b> / <span id="page-count">—</span></span>
+        <button class="btn-icon" data-action="next" title="Наступна сторінка">→</button>
+        <span class="spacer"></span>
+        <button class="btn-icon" data-action="zoom-out" title="Зменшити">−</button>
+        <button class="btn-icon" data-action="zoom-in" title="Збільшити">+</button>
+        <a class="btn-outline sm" id="download-link" href="#" download>Завантажити PDF</a>
+        <button class="modal-close" aria-label="Закрити">×</button>
+      </div>
+      <div class="pdf-stage"><canvas id="pdf-canvas"></canvas></div>
+    </div>
+  </div>
+
+</body>
+</html>
