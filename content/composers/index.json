@@ -1,0 +1,16 @@
+{
+  "composers": [
+    {
+      "slug": "valentyn-sylvestrov",
+      "name": "Валентин Сильвестров",
+      "photo": "https://via.placeholder.com/220.png?text=VS",
+      "summary": "Український композитор; вибрані хорові твори."
+    },
+    {
+      "slug": "mykola-leontovych",
+      "name": "Микола Леонтович",
+      "photo": "https://via.placeholder.com/220.png?text=ML",
+      "summary": "Класик хорової музики, автор «Щедрика»."
+    }
+  ]
+}
