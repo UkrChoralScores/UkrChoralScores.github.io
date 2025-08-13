@@ -1,0 +1,38 @@
+{
+  "pairs": [
+    {
+      "name": "Ніч яка місячна",
+      "old": {
+        "title": "Стара редакція",
+        "voices": "SATB",
+        "pages": 4,
+        "preview": "https://via.placeholder.com/480x640.png?text=Old+Edition",
+        "pdf": "https://example.com/folk_nich_old.pdf"
+      },
+      "new": {
+        "title": "Нова редакція",
+        "voices": "SATB",
+        "pages": 4,
+        "preview": "https://via.placeholder.com/480x640.png?text=New+Edition",
+        "pdf": "https://example.com/folk_nich_new.pdf"
+      }
+    },
+    {
+      "name": "Їхав козак за Дунай",
+      "old": {
+        "title": "Стара редакція",
+        "voices": "SAB",
+        "pages": 3,
+        "preview": "https://via.placeholder.com/480x640.png?text=Old+Edition",
+        "pdf": "https://example.com/du-nai_old.pdf"
+      },
+      "new": {
+        "title": "Нова редакція",
+        "voices": "SATB",
+        "pages": 3,
+        "preview": "https://via.placeholder.com/480x640.png?text=New+Edition",
+        "pdf": "https://example.com/du-nai_new.pdf"
+      }
+    }
+  ]
+}

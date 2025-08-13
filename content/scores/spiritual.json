@@ -1,0 +1,18 @@
+{
+  "scores": [
+    {
+      "title": "Херувимська пісня — Ред. А",
+      "voices": "SATB",
+      "pages": 3,
+      "preview": "https://via.placeholder.com/360x240.png?text=Spiritual+1",
+      "pdf": "https://example.com/spiritual_1.pdf"
+    },
+    {
+      "title": "Благослови, душе моя",
+      "voices": "SSAATTBB",
+      "pages": 5,
+      "preview": "https://via.placeholder.com/360x240.png?text=Spiritual+2",
+      "pdf": "https://example.com/spiritual_2.pdf"
+    }
+  ]
+}
