@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 200
