@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Валентин Сильвестров | UkrChoralScores</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+</head>
+<body>
+  
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="На головну">
+      <div class="logo">U</div><span>UkrChoralScores</span>
+    </a>
+    <nav class="nav" aria-label="Основна навігація">
+      <a href="index.html" class="">Головна</a>
+      <a href="folk.html" class="">Народні</a>
+      <a href="spiritual.html" class="">Духовні</a>
+      <a href="authors.html" class="active">Автори</a>
+      <a href="shop.html" class="">Магазин</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search">
+        <input id="site-search" type="search" placeholder="Пошук партитур..." aria-label="Пошук по сайту" />
+        <span class="icon">🔎</span>
+      </div>
+      <span id="user-pill" class="badge hidden"></span>
+      <button id="login-btn" class="btn primary pill">Увійти</button>
+      <button id="logout-btn" class="btn pill hidden">Вийти</button>
+    </div>
+  </div>
+</header>
+
+  <main class="container">
+    
+    <section>
+      <div class="section-title">
+        <h2>Валентин Сильвестров</h2>
+        <span class="section-sub">Біографія, відео та добірка партитур</span>
+      </div>
+      <div class="author-card">
+        <img src="../assets/images/shchedryk.png" alt="Валентин Сильвестров" />
+        <div>
+          <p class="muted">Коротка біографія та відомі хорові твори.</p>
+        </div>
+        <div class="actions"><a class="btn pill" href="../authors.html">Назад</a></div>
+      </div>
+
+      <div class="section-title"><h2>Партитури</h2></div>
+      <div class="carousel">
+        <button class="navbtn prev" aria-label="Назад">⟨</button>
+        <div class="track">
+          
+    <article class="card score-card" data-search="щедрик м. леонтович • satb">
+      <img class="thumb" src="assets/images/shchedryk.png" alt="Превʼю партитури Щедрик" loading="lazy"/>
+      <div class="body">
+        <h3 class="title">Щедрик</h3>
+        <p class="meta">М. Леонтович • SATB</p>
+        <div class="stats"><span>★ ★ ★ ★ ☆</span><span>• 1,2k views</span></div>
+        <div class="actions">
+          <button class="btn pill" data-view="assets/pdf/shchedryk.pdf" data-title="Щедрик">Переглянути</button>
+          <a class="btn pill" data-download href="assets/pdf/shchedryk.pdf" download>Завантажити</a>
+        </div>
+      </div>
+    </article>
+    
+          
+    <article class="card score-card" data-search="ніч яка місячна українська народна пісня • sab">
+      <img class="thumb" src="assets/images/nich_yaka_misyachna.png" alt="Превʼю партитури Ніч яка місячна" loading="lazy"/>
+      <div class="body">
+        <h3 class="title">Ніч яка місячна</h3>
+        <p class="meta">Українська народна пісня • SAB</p>
+        <div class="stats"><span>★ ★ ★ ★ ☆</span><span>• 1,2k views</span></div>
+        <div class="actions">
+          <button class="btn pill" data-view="assets/pdf/nich_yaka_misyachna.pdf" data-title="Ніч яка місячна">Переглянути</button>
+          <a class="btn pill" data-download href="assets/pdf/nich_yaka_misyachna.pdf" download>Завантажити</a>
+        </div>
+      </div>
+    </article>
+    
+          
+    <article class="card score-card" data-search="отче наш в. сильвестров • хор a cappella">
+      <img class="thumb" src="assets/images/otche_nash.png" alt="Превʼю партитури Отче наш" loading="lazy"/>
+      <div class="body">
+        <h3 class="title">Отче наш</h3>
+        <p class="meta">В. Сильвестров • Хор a cappella</p>
+        <div class="stats"><span>★ ★ ★ ★ ☆</span><span>• 1,2k views</span></div>
+        <div class="actions">
+          <button class="btn pill" data-view="assets/pdf/otche_nash.pdf" data-title="Отче наш">Переглянути</button>
+          <a class="btn pill" data-download href="assets/pdf/otche_nash.pdf" download>Завантажити</a>
+        </div>
+      </div>
+    </article>
+    
+        </div>
+        <button class="navbtn next" aria-label="Вперед">⟩</button>
+      </div>
+    </section>
+    
+  </main>
+  
+<div id="viewer-modal" class="modal" role="dialog" aria-modal="true" aria-label="Перегляд партитури">
+  <div class="panel">
+    <header>
+      <h3 id="viewer-title">Перегляд партитури</h3>
+      <button class="btn pill" data-close>Закрити</button>
+    </header>
+    <div class="content">
+      <iframe id="viewer-frame" title="PDF viewer"></iframe>
+    </div>
+  </div>
+</div>
+
+  
+<footer class="footer">
+  <div class="container grid">
+    <div>
+      <h4>UkrChoralScores</h4>
+      <p class="muted">Платформа для перегляду та завантаження хорових партитур.</p>
+    </div>
+    <div>
+      <h4>Розділи</h4>
+      <p><a href="index.html">Головна</a></p>
+      <p><a href="folk.html">Народні</a></p>
+      <p><a href="spiritual.html">Духовні</a></p>
+      <p><a href="authors.html">Автори</a></p>
+      <p><a href="shop.html">Магазин</a></p>
+    </div>
+    <div>
+      <h4>Підтримка</h4>
+      <p><a href="#">Зворотній звʼязок</a></p>
+      <p><a href="#">FAQ</a></p>
+      <p><a href="#">Політика конфіденційності</a></p>
+    </div>
+  </div>
+  <div class="container copy">© 2025 UkrChoralScores</div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
