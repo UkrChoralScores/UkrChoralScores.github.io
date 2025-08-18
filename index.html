@@ -47,6 +47,7 @@
      data-size="medium"
      data-logo_alignment="left">
 </div>
+      <div id="userInfo" style="margin-top:20px;"></div>
     </div>
     <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
@@ -315,28 +316,33 @@
     localStorage.setItem("google_token", token); // зберегли токен
 
     const payload = JSON.parse(atob(token.split('.')[1]));
-    document.getElementById("userInfo").innerHTML = `<p>Привіт, ${payload.name}!</p>`;
+
+    // показуємо ім’я користувача і кнопку "Вийти"
+    document.getElementById("userInfo").innerHTML = `
+      <p>Вітаю, ${payload.name} (${payload.email})!</p>
+      <button onclick="logout()">Вийти</button>
+    `;
+
+    // ховаємо кнопку входу
     document.getElementById("googleLogin").style.display = "none";
   }
 
+  // Автовхід при перезавантаженні сторінки
   window.onload = function () {
-    // перевірка, чи є токен у localStorage
     const token = localStorage.getItem("google_token");
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
-      document.getElementById("userInfo").innerHTML = `<p>Привіт, ${payload.name}!</p>`;
+      document.getElementById("userInfo").innerHTML = `
+        <p>Вітаю, ${payload.name} (${payload.email})!</p>
+        <button onclick="logout()">Вийти</button>
+      `;
       document.getElementById("googleLogin").style.display = "none";
-    } else {
-      google.accounts.id.initialize({
-        client_id: "ТВІЙ_CLIENT_ID.apps.googleusercontent.com",
-        callback: handleCredentialResponse
-      });
-      google.accounts.id.prompt();
     }
   }
 
+  // Вихід
   function logout() {
-    localStorage.removeItem("google_token"); // стираємо токен
+    localStorage.removeItem("google_token");
     document.getElementById("userInfo").innerHTML = "";
     document.getElementById("googleLogin").style.display = "block";
     google.accounts.id.disableAutoSelect();
