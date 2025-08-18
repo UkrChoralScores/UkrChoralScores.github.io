@@ -32,29 +32,34 @@
     </nav>
     <div class="nav-actions">
       <div class="search"><input id="q" type="search" placeholder="Пошук партитур…"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
-      <div class="dropdown">
-        <button class="drop-btn">Меню <span>▾</span></button>
-        <div class="drop-menu">
-      <div id="g_id_onload"
-     data-client_id="113331877760-auv83pmbmstm4te6ppo7s8qrk5f0ic7i.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-callback="handleCredentialResponse">
-</div>
-
-<div id="googleLoginWrapper">
-  <div class="g_id_signin"
-       data-type="standard"
-       data-shape="rectangular"
-       data-theme="outline"
-       data-text="signin"
-       data-size="medium"
-       data-logo_alignment="left"
-       id="googleLogin">
-  </div>
-</div>
-      <div id="userInfo" style="margin-top:20px;"></div>
+<div class="dropdown">
+  <button class="drop-btn">Вхід <span>▾</span></button>
+  <div class="drop-menu">
+    <!-- Google onload -->
+    <div id="g_id_onload"
+         data-client_id="ТВОЙ_CLIENT_ID.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse">
     </div>
+
+    <!-- Кнопка входу -->
+    <div id="googleLoginWrapper">
+      <div class="g_id_signin"
+           data-type="standard"
+           data-shape="rectangular"
+           data-theme="outline"
+           data-text="signin"
+           data-size="medium"
+           data-logo_alignment="left"
+           id="googleLogin">
+      </div>
+    </div>
+
+    <!-- Контейнер для вітання -->
+    <div id="userInfo" style="display:none; margin-top:10px;"></div>
+  </div>
+</div>  
     <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -319,41 +324,26 @@
 <script>
   function handleCredentialResponse(response) {
     const token = response.credential;
-    localStorage.setItem("google_token", token);
-
     const payload = JSON.parse(atob(token.split('.')[1]));
+    console.log("Google user:", payload);
 
-    // показуємо дані з "Вийти" у тексті
-document.getElementById("userInfo").innerHTML = `
-  <span style="display:inline-block; vertical-align:middle;">
-    Вітаємо, ${payload.name} 
-    <a href="#" onclick="logout()" style="margin-left:8px; color:#007bff; text-decoration:none;">Вийти</a>
-  </span>
-`;
-
+    // Ховаємо кнопку входу
     document.getElementById("googleLoginWrapper").style.display = "none";
-  }
 
-  // Автовхід при перезавантаженні
-  window.onload = function () {
-    const token = localStorage.getItem("google_token");
-    if (token) {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-document.getElementById("userInfo").innerHTML = `
-  <span style="display:inline-block; vertical-align:middle;">
-    Вітаю, ${payload.name} 
-    <a href="#" onclick="logout()" style="margin-left:8px; color:#007bff; text-decoration:none;">Вийти</a>
-  </span>
-`;
-      document.getElementById("googleLoginWrapper").style.display = "none";
-    }
+    // Показуємо вітання
+    document.getElementById("userInfo").style.display = "block";
+    document.getElementById("userInfo").innerHTML = `
+      Вітаю, ${payload.name} <br>
+      <a href="#" onclick="logout()" style="color:#007bff; text-decoration:none;">Вийти</a>
+    `;
   }
 
   function logout() {
-    localStorage.removeItem("google_token");
-    document.getElementById("userInfo").innerHTML = "";
+    // Ховаємо вітання
+    document.getElementById("userInfo").style.display = "none";
+
+    // Показуємо кнопку входу
     document.getElementById("googleLoginWrapper").style.display = "block";
-    google.accounts.id.disableAutoSelect();
   }
 </script>
 </body>
