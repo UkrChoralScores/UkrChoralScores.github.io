@@ -322,7 +322,7 @@
 
     // показуємо дані
     document.getElementById("userInfo").innerHTML = `
-      <p>Вітаю, ${payload.name} (${payload.email})!</p>
+      <p>Вітаю, ${payload.name}!</p>
       <button onclick="logout()">Вийти</button>
     `;
 
@@ -336,7 +336,7 @@
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
       document.getElementById("userInfo").innerHTML = `
-        <p>Вітаю, ${payload.name} (${payload.email})!</p>
+        <p>Вітаю, ${payload.name}!</p>
         <button onclick="logout()">Вийти</button>
       `;
       document.getElementById("googleLoginWrapper").style.display = "none";
