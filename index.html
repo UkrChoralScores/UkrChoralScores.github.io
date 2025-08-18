@@ -39,13 +39,16 @@
      data-callback="handleCredentialResponse">
 </div>
 
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="outline"
-     data-text="signin"
-     data-size="large"
-     data-logo_alignment="left">
+<div id="googleLoginWrapper">
+  <div class="g_id_signin"
+       data-type="standard"
+       data-shape="rectangular"
+       data-theme="outline"
+       data-text="signin"
+       data-size="large"
+       data-logo_alignment="left"
+       id="googleLogin">
+  </div>
 </div>
       <div id="userInfo" style="margin-top:20px;"></div>
     </div>
@@ -313,21 +316,21 @@
 <script>
   function handleCredentialResponse(response) {
     const token = response.credential;
-    localStorage.setItem("google_token", token); // зберегли токен
+    localStorage.setItem("google_token", token);
 
     const payload = JSON.parse(atob(token.split('.')[1]));
 
-    // показуємо ім’я користувача і кнопку "Вийти"
+    // показуємо дані
     document.getElementById("userInfo").innerHTML = `
-      <p>Вітаю, ${payload.name}!</p>
+      <p>Вітаю, ${payload.name} (${payload.email})!</p>
       <button onclick="logout()">Вийти</button>
     `;
 
-    // ховаємо кнопку входу
-    document.getElementById("googleLogin").style.display = "none";
+    // тут ховаємо кнопку входу
+    document.getElementById("googleLoginWrapper").style.display = "none";
   }
 
-  // Автовхід при перезавантаженні сторінки
+  // Автовхід при перезавантаженні
   window.onload = function () {
     const token = localStorage.getItem("google_token");
     if (token) {
@@ -336,15 +339,14 @@
         <p>Вітаю, ${payload.name} (${payload.email})!</p>
         <button onclick="logout()">Вийти</button>
       `;
-      document.getElementById("googleLogin").style.display = "none";
+      document.getElementById("googleLoginWrapper").style.display = "none";
     }
   }
 
-  // Вихід
   function logout() {
     localStorage.removeItem("google_token");
     document.getElementById("userInfo").innerHTML = "";
-    document.getElementById("googleLogin").style.display = "block";
+    document.getElementById("googleLoginWrapper").style.display = "block";
     google.accounts.id.disableAutoSelect();
   }
 </script>
