@@ -3,10 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Головна • UkrChoralScores</title>
+  <title>Напишіть нам • UkrChoralScores</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-form {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .contact-form .form-group {
+      margin-bottom: 20px;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #6c3cf0;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -30,17 +66,22 @@
       <a href="shop.html">Магазин</a>
     </nav>
     <div class="nav-actions">
-      <div class="search"><input id="q" type="search" placeholder="Пошук партитур…"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
-      <a class="btn-primary" href="assets/sample/placeholder.pdf" download>Напишіть нам!</a>
+      <div class="search">
+        <input id="q" type="search" placeholder="Пошук партитур…">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <a class="btn-primary" href="contact.html">Напишіть нам!</a>
     </div>
     <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
+
 <main class="page">
-  
-<h1>Напишіть нам</h1>
+  <h1>Напишіть нам</h1>
   <div class="container">
-    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+    <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
       <div class="form-group">
         <label for="name">Ваше ім’я</label>
         <input type="text" id="name" name="name" placeholder="Введіть ваше ім’я" required>
@@ -53,12 +94,12 @@
         <label for="message">Повідомлення</label>
         <textarea id="message" name="message" placeholder="Ваші побажання..." required></textarea>
       </div>
-      <button type="submit">Надіслати</button>
+      <button type="submit" class="btn-primary">Надіслати</button>
     </form>
   </div>
-
-<div style="height:80px;"></div>
+  <div style="height:80px;"></div>
 </main>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
@@ -81,39 +122,33 @@
         <li><a href="sacred.html">Духовні пісні</a></li>
       </ul>
     </div>
-<div>
-  <h4>Звʼяжіться з нами</h4>
-  <div class="social-contacts">
-    <!-- Telegram -->
-    <div class="contact-item">
-      <p><a href="https://t.me/ukrchoralscores" target="_blank">Telegram →</a></p>
-      <img src="images/frame1.png" alt="Telegram QR" width="120">
+    <div>
+      <h4>Звʼяжіться з нами</h4>
+      <div class="social-contacts">
+        <div class="contact-item">
+          <p><a href="https://t.me/ukrchoralscores" target="_blank">Telegram →</a></p>
+          <img src="images/frame1.png" alt="Telegram QR" width="120">
+        </div>
+        <div class="contact-item">
+          <p><a href="mailto:ukrchoralscores@gmail.com">Gmail →</a></p>
+          <img src="images/frame2.png" alt="Gmail QR" width="120">
+        </div>
+      </div>
     </div>
-
-    <!-- Gmail -->
-    <div class="contact-item">
-      <p><a href="mailto:ukrchoralscores@gmail.com">Gmail →</a></p>
-      <img src="images/frame2.png" alt="Gmail QR" width="120">
-    </div>
-  </div>
-</div>
-
-<style>
-  .social-contacts {
-    display: flex;
-    gap: 40px; /* відстань між блоками */
-    margin-top: 10px;
-  }
-
-  .contact-item {
-    text-align: center; /* вирівнює назву по центру над QR */
-  }
-
-  .contact-item p {
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-</style>
+    <style>
+      .social-contacts {
+        display: flex;
+        gap: 40px;
+        margin-top: 10px;
+      }
+      .contact-item {
+        text-align: center;
+      }
+      .contact-item p {
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+    </style>
   </div>
   <div style="height:100px;"></div>
   <div class="copy">© 2025 UkrChoralScores. Створено з ❤️ до української хорової музики.</div>
