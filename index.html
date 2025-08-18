@@ -44,7 +44,7 @@
      data-shape="rectangular"
      data-theme="outline"
      data-text="signin"
-     data-size="medium"
+     data-size="large"
      data-logo_alignment="left">
 </div>
       <div id="userInfo" style="margin-top:20px;"></div>
@@ -319,7 +319,7 @@
 
     // показуємо ім’я користувача і кнопку "Вийти"
     document.getElementById("userInfo").innerHTML = `
-      <p>Вітаю, ${payload.name} (${payload.email})!</p>
+      <p>Вітаю, ${payload.name}!</p>
       <button onclick="logout()">Вийти</button>
     `;
 
