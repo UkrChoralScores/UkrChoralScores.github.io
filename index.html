@@ -322,7 +322,7 @@
 
     // показуємо дані
     document.getElementById("userInfo").innerHTML = `
-      <p>Вітаю, ${payload.name}!</p>
+      <p>Вітаємо, ${payload.name}!</p>
     `;
 
     // тут ховаємо кнопку входу
@@ -335,7 +335,7 @@
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
       document.getElementById("userInfo").innerHTML = `
-        <p>Вітаю, ${payload.name}!</p>
+        <p>Вітаємо, ${payload.name}!</p>
       `;
       document.getElementById("googleLoginWrapper").style.display = "none";
     }
