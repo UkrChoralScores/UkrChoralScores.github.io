@@ -312,10 +312,34 @@
 <script>
   function handleCredentialResponse(response) {
     const token = response.credential;
-    const payload = JSON.parse(atob(token.split('.')[1]));
+    localStorage.setItem("google_token", token); // зберегли токен
 
-    // виводимо тільки привітання
+    const payload = JSON.parse(atob(token.split('.')[1]));
     document.getElementById("userInfo").innerHTML = `<p>Привіт, ${payload.name}!</p>`;
+    document.getElementById("googleLogin").style.display = "none";
+  }
+
+  window.onload = function () {
+    // перевірка, чи є токен у localStorage
+    const token = localStorage.getItem("google_token");
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      document.getElementById("userInfo").innerHTML = `<p>Привіт, ${payload.name}!</p>`;
+      document.getElementById("googleLogin").style.display = "none";
+    } else {
+      google.accounts.id.initialize({
+        client_id: "ТВІЙ_CLIENT_ID.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+      });
+      google.accounts.id.prompt();
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem("google_token"); // стираємо токен
+    document.getElementById("userInfo").innerHTML = "";
+    document.getElementById("googleLogin").style.display = "block";
+    google.accounts.id.disableAutoSelect();
   }
 </script>
 </body>
