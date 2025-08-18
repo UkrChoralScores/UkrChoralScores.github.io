@@ -8,11 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <style>
-  .google-btn { ... }
-  .google-btn img { ... }
-  .google-btn:hover { ... }
-</style>
 </head>
 <body>
 <header class="site-header">
@@ -37,10 +32,21 @@
     </nav>
     <div class="nav-actions">
       <div class="search"><input id="q" type="search" placeholder="Пошук партитур…"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
-<button id="googleLogin" class="google-btn">
-  <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo">
-  <span>Увійти</span>
-</button>
+<div id="g_id_onload"
+     data-client_id="ТВОЙ_CLIENT_ID.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-callback="handleCredentialResponse">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="medium"
+     data-logo_alignment="left">
+</div>
     </div>
     <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
@@ -303,27 +309,17 @@
   <div class="copy">© 2025 UkrChoralScores. Створено з ❤️ до української хорової музики.</div>
 </footer>
 <script src="js/app.js"></script>
-<!-- Підключення Google API -->
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-
 <script>
-  window.onload = function () {
-    google.accounts.id.initialize({
-      client_id: "113331877760-auv83pmbmstm4te6ppo7s8qrk5f0ic7i.apps.googleusercontent.com",
-      callback: handleCredentialResponse
-    });
-
-    document.getElementById("googleLogin").addEventListener("click", () => {
-      google.accounts.id.prompt(); // відкриє Google login popup
-    });
-  };
-
   function handleCredentialResponse(response) {
-    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    // Отримаєш JWT-токен
+    const token = response.credential;
+
+    // Розкодувати email, імʼя, аватар можна прямо в браузері
+    const payload = JSON.parse(atob(token.split('.')[1]));
     console.log("Google user:", payload);
 
-    // приклад дії після входу
-    document.body.innerHTML += `<p>Вітаю, ${payload.name}!</p>`;
+    // Наприклад, показати імʼя користувача на сайті
+    document.body.innerHTML += `<p>Вітаю, ${payload.name} (${payload.email})!</p>`;
   }
 </script>
 </body>
