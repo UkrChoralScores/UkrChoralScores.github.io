@@ -321,10 +321,12 @@
     const payload = JSON.parse(atob(token.split('.')[1]));
 
     // показуємо дані з "Вийти" у тексті
-    document.getElementById("userInfo").innerHTML = `
-      <p>Вітаємо, ${payload.name}
-      <a href="#" onclick="logout()" style="margin-left:10px; color:#007bff; cursor:pointer; text-decoration:none;">Вийти</a></p>
-    `;
+document.getElementById("userInfo").innerHTML = `
+  <span style="display:inline-block; vertical-align:middle;">
+    Вітаємо, ${payload.name} 
+    <a href="#" onclick="logout()" style="margin-left:8px; color:#007bff; text-decoration:none;">Вийти</a>
+  </span>
+`;
 
     document.getElementById("googleLoginWrapper").style.display = "none";
   }
@@ -334,10 +336,12 @@
     const token = localStorage.getItem("google_token");
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
-      document.getElementById("userInfo").innerHTML = `
-        <p>Вітаємо, ${payload.name} 
-        <a href="#" onclick="logout()" style="margin-left:10px; color:#007bff; cursor:pointer; text-decoration:none;">Вийти</a></p>
-      `;
+document.getElementById("userInfo").innerHTML = `
+  <span style="display:inline-block; vertical-align:middle;">
+    Вітаю, ${payload.name} 
+    <a href="#" onclick="logout()" style="margin-left:8px; color:#007bff; text-decoration:none;">Вийти</a>
+  </span>
+`;
       document.getElementById("googleLoginWrapper").style.display = "none";
     }
   }
