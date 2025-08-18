@@ -311,16 +311,35 @@
 <script src="js/app.js"></script>
 <script>
   function handleCredentialResponse(response) {
-    // Отримаєш JWT-токен
-    const token = response.credential;
+    const data = JSON.parse(atob(response.credential.split('.')[1]));
 
-    // Розкодувати email, імʼя, аватар можна прямо в браузері
-    const payload = JSON.parse(atob(token.split('.')[1]));
-    console.log("Google user:", payload);
+    // показуємо дані користувача
+    document.getElementById("userInfo").innerHTML = `
+      <p>Вітаю, ${data.name} (${data.email})</p>
+      <img src="${data.picture}" alt="avatar" style="border-radius:50%; width:50px; margin-top:10px;">
+      <br><button onclick="logout()">Вийти</button>
+    `;
 
-    // Наприклад, показати імʼя користувача на сайті
-    document.body.innerHTML += `<p>Вітаю, ${payload.name} (${payload.email})!</p>`;
+    // ховаємо кнопку входу
+    document.getElementById("googleLogin").style.display = "none";
   }
+
+  function logout() {
+    document.getElementById("userInfo").innerHTML = "";
+    document.getElementById("googleLogin").style.display = "flex";
+    google.accounts.id.disableAutoSelect();
+  }
+
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: "ТВОЙ_CLIENT_ID.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+
+    document.getElementById("googleLogin").addEventListener("click", () => {
+      google.accounts.id.prompt(); 
+    });
+  };
 </script>
 </body>
 </html>
