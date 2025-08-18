@@ -316,37 +316,26 @@
 <script>
   function handleCredentialResponse(response) {
     const token = response.credential;
-    localStorage.setItem("google_token", token);
-
     const payload = JSON.parse(atob(token.split('.')[1]));
+    console.log("Google user:", payload);
 
-    // показуємо дані з "Вийти" у тексті
-    document.getElementById("userInfo").innerHTML = `
-      <p>Вітаю, ${payload.name}
-      <a href="#" onclick="logout()" style="margin-left:10px; color:#007bff; cursor:pointer; text-decoration:none;">Вийти</a></p>
-    `;
-
+    // Ховаємо кнопку входу
     document.getElementById("googleLoginWrapper").style.display = "none";
-  }
 
-  // Автовхід при перезавантаженні
-  window.onload = function () {
-    const token = localStorage.getItem("google_token");
-    if (token) {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      document.getElementById("userInfo").innerHTML = `
-        <p>Вітаю, ${payload.name}
-        <a href="#" onclick="logout()" style="margin-left:10px; color:#007bff; cursor:pointer; text-decoration:none;">Вийти</a></p>
-      `;
-      document.getElementById("googleLoginWrapper").style.display = "none";
-    }
+    // Показуємо вітання
+    document.getElementById("userInfo").style.display = "inline-flex";
+    document.getElementById("userInfo").innerHTML = `
+      Вітаємо, ${payload.name}
+      <a href="#" onclick="logout()" style="margin-left:8px; color:#007bff; text-decoration:none;">Вийти</a>
+    `;
   }
 
   function logout() {
-    localStorage.removeItem("google_token");
-    document.getElementById("userInfo").innerHTML = "";
+    // Ховаємо вітання
+    document.getElementById("userInfo").style.display = "none";
+
+    // Показуємо кнопку входу
     document.getElementById("googleLoginWrapper").style.display = "block";
-    google.accounts.id.disableAutoSelect();
   }
 </script>
 </body>
