@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Головна • UkrChoralScores</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">🎵</span>
+      <span>UkrChoralScores</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Головна</a>
+      <div class="dropdown">
+        <button class="drop-btn">Ноти <span>▾</span></button>
+        <div class="drop-menu">
+          <a href="folk.html">Народні пісні</a>
+          <a href="authors.html">Автори</a>
+          <a href="sacred.html">Духовні твори</a>
+        </div>
+      </div>
+      <a href="news.html">Новини</a>
+      <a href="articles.html">Статті</a>
+      <a href="shop.html">Магазин</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="search"><input id="q" type="search" placeholder="Пошук партитур…"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+      <a class="btn-primary" href="assets/sample/placeholder.pdf" download>Увійти</a>
+    </div>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main class="page">
+
+<!-- Hero Section -->
+<section class="hero1">
+  <div class="hero1-inner">
+    <div class="hero1-text">
+      <h1>UkrChoralScores</h1>
+      <p>Електронна бібліотека українських хорових партитур.
+         У нашій бібліотеці ви знайдете класичні та сучасні хорові твори українських композиторів, народні пісні, духовні піснеспіви.
+Всі партитури доступні для перегляду та завантаження у форматі PDF.</p>
+    </div>
+
+    <!-- Статистика -->
+    <div class="hero1-stats">
+      <div class="stat">
+        <h2>1200+</h2>
+        <p>Партитур</p>
+      </div>
+      <div class="stat">
+        <h2>300+</h2>
+        <p>Користувачів</p>
+      </div>
+      <div class="stat">
+        <h2>150+</h2>
+        <p>Статей</p>
+      </div>
+    </div>
+
+    <!-- Кнопки -->
+    <div class="hero1-buttons">
+      <a href="#scores" class="hero1-btn">
+        📖 Переглянути партитури
+      </a>
+      <a href="#news" class="hero1-btn">
+        📰 Новини
+      </a>
+      <a href="#articles" class="hero1-btn">
+        ✍️ Статті
+      </a>
+      <a href="#scores" class="hero1-btn">
+        📖 Магазин
+      </a>
+    </div>
+  </div>
+</section>
+  
+<div style="height:80px;"></div>
+  <section class="shop-preview">
+  <div class="container">
+    <h2 class="title-lg">Нещодавно додані партитури</h2>
+    <p class="lead">Книги, ноти, музичні партитури українських хорових творів</p>
+    <div class="grid-4 scroll-reveal">
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Ніч яка місячна">
+        <h4>Ніч яка місячна</h4>
+        <p class="muted">Мелодія </p>
+        <div class="price">PDF</div>
+        <div class="card-actions"><a class="btn" href="#">Переглянути</a><a class="btn-icon" href="#" title="Завантажити">⬇</a></div>
+      </article>
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Ніч яка місячна">
+        <h4>Ніч яка місячна</h4>
+        <p class="muted">Обр. С. Самуйлова SATB</p>
+        <div class="price">PDF</div>
+        <div class="card-actions"><a class="btn" href="#">Переглянути</a><a class="btn-icon" href="#" title="Завантажити">⬇</a></div>
+      </article>
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Сонце заходить">
+        <h4>Сонце заходить</h4>
+        <p class="muted">С. Людкевич</p>
+        <div class="price">PDF</div>
+        <div class="card-actions"><a class="btn" href="#">Переглянути</a><a class="btn-icon" href="#" title="Завантажити">⬇</a></div>
+      </article>
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Ой, у полі, полі">
+        <h4>Ой, у полі, полі</h4>
+        <p class="muted">Обр. П. Козицького</p>
+        <div class="price">PDF</div>
+        <div class="card-actions"><a class="btn" href="#">Переглянути</a><a class="btn-icon" href="#" title="Завантажити">⬇</a></div>
+      </article>
+    </div>
+    <div class="center mt-6">
+      <a class="btn-primary" href="folk.html">Переглянути всі партитури →</a>
+    </div>
+  </div>
+</section>
+
+<div style="height:80px;"></div>
+<section class="collections">
+  <div class="container">
+    <h2 class="title-lg">Колекції нот</h2>
+    <p class="lead">Досліджуйте багату традицію української хорової музики через наші тематичні колекції</p>
+    <div class="grid-3 scroll-reveal">
+      <a class="panel" href="folk.html">
+        <div class="icon">♡</div>
+        <h3>Народні пісні</h3>
+        <p>Автентичні українські народні мелодії, передані через покоління</p>
+        <span class="muted">240+ партитур</span>
+      </a>
+      <a class="panel" href="authors.html">
+        <div class="icon">🎼</div>
+        <h3>Композитори</h3>
+        <p>Твори видатних українських композиторів різних епох</p>
+        <span class="muted">180+ партитур</span>
+      </a>
+      <a class="panel" href="sacred.html">
+        <div class="icon">◎</div>
+        <h3>Духовні пісні</h3>
+        <p>Сакральна музика та духовні піснеспіви української хорової традиції</p>
+        <span class="muted">320+ партитур</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div style="height:80px;"></div>
+<section class="catalog">
+  <div class="container">
+    <h1 class="title-lg">Новини</h1>
+    <p class="lead">Останні події у світі української хорової музики</p>
+    <div class="grid-3 scroll-reveal">
+      <article class="news-card">
+        <img src="assets/img/dark.svg" alt="">
+        <div class="card-body">
+          <p class="pill">Культура • 15 листопада 2024</p>
+          <h3>Міжнародний фестиваль української хорової музики у Києві</h3>
+          <p class="muted">Очікується участь понад 50 хорових колективів з різних країн світу…</p>
+          <a class="btn" href="#">Читати далі →</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="assets/img/concert.svg" alt="">
+        <div class="card-body">
+          <p class="pill">Освіта • 12 листопада 2024</p>
+          <h3>Нові освітні програми з хорового диригування</h3>
+          <p class="muted">Київська консерваторія запускає нові курси для підготовки професійних хорових диригентів…</p>
+          <a class="btn" href="#">Читати далі →</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="assets/img/notes.svg" alt="">
+        <div class="card-body">
+          <p class="pill">Нові партитури • 10 листопада 2024</p>
+          <h3>Відкрито архів партитур Миколи Лисенка</h3>
+          <p class="muted">Унікальна колекція нотних матеріалів тепер доступна в цифровому форматі…</p>
+          <a class="btn" href="#">Читати далі →</a>
+        </div>
+      </article>
+    </div>
+    <div class="center mt-6">
+      <a class="btn-primary" href="news.html">Переглянути всі новини →</a>
+    </div>
+  </div>
+</section>
+
+<div style="height:80px;"></div>
+<section class="shop-preview">
+  <div class="container">
+    <h2 class="title-lg">Магазин</h2>
+    <p class="lead">Книги, ноти, музичні партитури українських хорових творів</p>
+    <div class="grid-4 scroll-reveal">
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Книга">
+        <h4>Демонстраційний варіант</h4>
+        <p class="muted">Демонстраційни варіант опису партитури</p>
+        <div class="price">100 ₴</div>
+        <a class="btn-primary" href="#">Придбати</a>
+      </article>
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Камертон">
+        <h4>Демонстраційний варіант</h4>
+        <p class="muted">Демонстраційни варіант опису партитури</p>
+        <div class="price">100 ₴</div>
+        <a class="btn-primary" href="#">Придбати</a>
+      </article>
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Пюпітр">
+        <h4>Демонстраційний варіант</h4>
+        <p class="muted">Демонстраційни варіант опису партитури</p>
+        <div class="price">100 ₴</div>
+        <a class="btn-primary" href="#">Придбати</a>
+      </article>
+      <article class="product">
+        <img src="assets/img/notes1.jpg" alt="Метроном">
+        <h4>Демонстраційний варіант</h4>
+        <p class="muted">Демонстраційни варіант опису партитури</p>
+        <div class="price">100 ₴</div>
+        <a class="btn-primary" href="#">Придбати</a>
+      </article>
+    </div>
+     <div class="center mt-6">
+      <a class="btn-primary" href="shop.html">Переглянути всі партитури →</a>
+    </div>
+  </div>
+</section>
+
+<div style="height:80px;"></div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand brand-lg"><span class="brand-icon">🎵</span><span>UkrChoralScores</span></div>
+      <p>Електронна бібліотека українських хорових партитур.</p>
+    </div>
+    <div>
+      <h4>Швидкі посилання</h4>
+      <ul>
+        <li><a href="index.html">Про нас</a></li>
+        <li><a href="#">Контакти</a></li>
+        <li><a href="#">Допомога</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Категорії</h4>
+      <ul>
+        <li><a href="folk.html">Народні пісні</a></li>
+        <li><a href="authors.html">Автори</a></li>
+        <li><a href="sacred.html">Духовні пісні</a></li>
+      </ul>
+    </div>
+<div>
+  <h4>Звʼяжіться з нами</h4>
+  <div class="social-contacts">
+    <!-- Telegram -->
+    <div class="contact-item">
+      <p><a href="https://t.me/ukrchoralscores" target="_blank">Telegram →</a></p>
+      <img src="images/frame1.png" alt="Telegram QR" width="120">
+    </div>
+
+    <!-- Gmail -->
+    <div class="contact-item">
+      <p><a href="mailto:ukrchoralscores@gmail.com">Gmail →</a></p>
+      <img src="images/frame2.png" alt="Gmail QR" width="120">
+    </div>
+  </div>
+</div>
+
+<style>
+  .social-contacts {
+    display: flex;
+    gap: 40px; /* відстань між блоками */
+    margin-top: 10px;
+  }
+
+  .contact-item {
+    text-align: center; /* вирівнює назву по центру над QR */
+  }
+
+  .contact-item p {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+</style>
+  </div>
+  <div style="height:100px;"></div>
+  <div class="copy">© 2025 UkrChoralScores. Створено з ❤️ до української хорової музики.</div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
