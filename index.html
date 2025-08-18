@@ -323,7 +323,6 @@
     // показуємо дані
     document.getElementById("userInfo").innerHTML = `
       <p>Вітаю, ${payload.name}!</p>
-      <button onclick="logout()">Вийти</button>
     `;
 
     // тут ховаємо кнопку входу
@@ -337,7 +336,6 @@
       const payload = JSON.parse(atob(token.split('.')[1]));
       document.getElementById("userInfo").innerHTML = `
         <p>Вітаю, ${payload.name}!</p>
-        <button onclick="logout()">Вийти</button>
       `;
       document.getElementById("googleLoginWrapper").style.display = "none";
     }
