@@ -211,8 +211,21 @@ a{color:inherit;text-decoration:none}
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.card1, {
-  width: 100%;          /* картка займає всю доступну ширину */
-  max-width: 320px;      /* але не більше 320px */
-  min-height: 200px;     /* мінімальна висота */
+.card1 {
+  display: flex;              /* робимо горизонтальне розташування */
+  align-items: center;        /* вирівнювання по вертикалі */
+  gap: 16px;                  /* відстань між елементами всередині */
+  
+  width: 100%;                /* картка займає всю доступну ширину */
+  max-width: 600px;           /* можна збільшити ширину */
+  min-height: 200px;          /* мінімальна висота */
+  
+  background: #fff;           /* фон */
+  border: 1px solid #ccc;     /* рамка */
+  border-radius: 8px;         /* закруглені кути */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* легка тінь */
+  
+  padding: 16px;              /* внутрішні відступи */
+  overflow: hidden;           /* щоб контент не вилазив */
 }
+
