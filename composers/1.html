@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Автори • UkrChoralScores</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">🎵</span>
+      <span>UkrChoralScores</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Головна</a>
+      <div class="dropdown">
+        <button class="drop-btn">Ноти <span>▾</span></button>
+        <div class="drop-menu">
+          <a href="folk.html">Народні пісні</a>
+          <a href="authors.html">Автори</a>
+          <a href="sacred.html">Духовні твори</a>
+        </div>
+      </div>
+      <a href="news.html">Новини</a>
+      <a href="articles.html">Статті</a>
+      <a href="shop.html">Магазин</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="search"><input id="q" type="search" placeholder="Пошук партитур…"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+      <a class="btn-primary" href="assets/sample/placeholder.pdf" download>Увійти</a>
+    </div>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Блок з фото та біографією -->
+  <section class="two-col scroll-reveal" style="margin: 40px 0;">
+    <div class="portrait">
+      <img src="images/composer.jpg" alt="Композитор">
+    </div>
+    <div class="bio">
+      <h1 class="title-lg accent">Ім’я Прізвище</h1>
+      <p class="lead">
+        Коротка біографія композитора: де народився, творчий шлях, важливі події життя. 
+        Опишіть його внесок у розвиток української музики, ключові твори та досягнення.
+      </p>
+      <p>
+        Додаткові факти про композитора можна подати у вигляді кількох абзаців. 
+        Таким чином відвідувачі зможуть краще дізнатись його історію та цінність.
+      </p>
+    </div>
+  </section>
+
+  <!-- Секція партитур -->
+  <section class="catalog">
+    <div class="section-title">
+      <h2>Партитури композитора</h2>
+      <a href="#" class="btn">Переглянути всі</a>
+    </div>
+    <div class="cards scroll-reveal">
+
+      <div class="card">
+        <div class="card-body">
+          <h3>Назва партитури</h3>
+          <p class="muted">SATB · PDF</p>
+          <div class="card-actions">
+            <a href="#" class="btn-primary">Переглянути</a>
+            <a href="#" class="btn">⬇️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h3>Назва партитури 2</h3>
+          <p class="muted">SSA · PDF</p>
+          <div class="card-actions">
+            <a href="#" class="btn-primary">Переглянути</a>
+            <a href="#" class="btn">⬇️</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Додаєш інші картки за потребою -->
+
+    </div>
+  </section>
+
+<section style="margin:60px 0;" class="scroll-reveal center">
+  <div class="section-title center">
+    <h2>Відео-виступи</h2>
+  </div>
+  <button onclick="openVideo()" class="btn-primary" style="padding:14px 26px;font-size:16px;">
+    🎬 Дивитись відео
+  </button>
+
+  <!-- Модальне вікно -->
+  <div id="videoModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button onclick="closeVideo()" class="close-btn">✕</button>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand brand-lg"><span class="brand-icon">🎵</span><span>UkrChoralScores</span></div>
+      <p>Електронна бібліотека українських хорових партитур.</p>
+    </div>
+    <div>
+      <h4>Швидкі посилання</h4>
+      <ul>
+        <li><a href="index.html">Про нас</a></li>
+        <li><a href="#">Контакти</a></li>
+        <li><a href="#">Допомога</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Категорії</h4>
+      <ul>
+        <li><a href="folk.html">Народні пісні</a></li>
+        <li><a href="authors.html">Автори</a></li>
+        <li><a href="sacred.html">Духовні пісні</a></li>
+      </ul>
+    </div>
+<div>
+  <h4>Звʼяжіться з нами</h4>
+  <div class="social-contacts">
+    <!-- Telegram -->
+    <div class="contact-item">
+      <p><a href="https://t.me/ukrchoralscores" target="_blank">Telegram →</a></p>
+      <img src="images/frame1.png" alt="Telegram QR" width="120">
+    </div>
+
+    <!-- Gmail -->
+    <div class="contact-item">
+      <p><a href="mailto:ukrchoralscores@gmail.com">Gmail →</a></p>
+      <img src="images/frame2.png" alt="Gmail QR" width="120">
+    </div>
+  </div>
+</div>
+
+<style>
+  .social-contacts {
+    display: flex;
+    gap: 40px; /* відстань між блоками */
+    margin-top: 10px;
+  }
+
+  .contact-item {
+    text-align: center; /* вирівнює назву по центру над QR */
+  }
+
+  .contact-item p {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+</style>
+  </div>
+  <div style="height:100px;"></div>
+  <div class="copy">© 2025 UkrChoralScores. Створено з ❤️ до української хорової музики.</div>
+</footer>
+<script src="js/app.js"></script>
+<script>
+  function openVideo(){
+    document.getElementById('videoModal').classList.remove('hidden');
+    document.getElementById('videoModal').classList.add('flex');
+  }
+  function closeVideo(){
+    document.getElementById('videoModal').classList.add('hidden');
+    document.getElementById('videoModal').classList.remove('flex');
+  }
+</script>
+</body>
+</html>
