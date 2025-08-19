@@ -314,7 +314,7 @@ a{color:inherit;text-decoration:none}
   display: flex;
   align-items: flex-start;
   gap: 30px;         /* відступ між фото і текстом */
-  margin: 60px;
+  margin: 70px;
 }
 
 .portrait img {
