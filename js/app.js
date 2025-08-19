@@ -1,17 +1,15 @@
-// Dropdown
-const dropBtn = document.querySelector('.drop-btn');
+// Simple nav behaviors, burger menu, dropdown and scroll reveal
 const dropdown = document.querySelector('.dropdown');
+const dropBtn = document.querySelector('.drop-btn');
+dropBtn?.addEventListener('click', () => dropdown.classList.toggle('open'));
 
-dropBtn?.addEventListener('click', () => {
-  dropdown.classList.toggle('open');
-});
-
-// Burger menu
 const burger = document.querySelector('.burger');
 const mainNav = document.querySelector('.main-nav');
-
 burger?.addEventListener('click', () => {
-  mainNav.classList.toggle('open');
+  if(!mainNav) return;
+  mainNav.style.display = mainNav.style.display === 'flex' ? 'none' : 'flex';
+  mainNav.style.flexDirection = 'column';
+  mainNav.style.gap = '10px';
 });
 
 // Scroll reveal for elements with .scroll-reveal children
