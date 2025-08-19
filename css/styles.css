@@ -211,21 +211,46 @@ a{color:inherit;text-decoration:none}
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.card1 {
-  display: flex;              /* робимо горизонтальне розташування */
-  align-items: center;        /* вирівнювання по вертикалі */
-  gap: 16px;                  /* відстань між елементами всередині */
-  
-  width: 100%;                /* картка займає всю доступну ширину */
-  max-width: 600px;           /* можна збільшити ширину */
-  min-height: 150px;          /* мінімальна висота */
-  
-  background: #fff;           /* фон */
-  border: 1px solid #ccc;     /* рамка */
-  border-radius: 16px;         /* закруглені кути */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* легка тінь */
-  
-  padding: 8px;              /* внутрішні відступи */
-  overflow: hidden;           /* щоб контент не вилазив */
+.author-card {
+  display: flex;
+  justify-content: space-between; /* текст зліва, кнопка справа */
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eef0f5;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px 24px;
+  margin: 20px auto;
+  max-width: 1200px;   /* ширина блоку */
+  transition: all 0.3s ease-in-out;
+}
+
+.author-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.author-info h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.author-info .muted {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.author-actions .btn {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #8e2de2, #4a00e0);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.author-actions .btn:hover {
+  background: linear-gradient(90deg, #4a00e0, #8e2de2);
 }
 
