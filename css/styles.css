@@ -211,7 +211,7 @@ a{color:inherit;text-decoration:none}
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.author-card {
+.author1-card {
   display: flex;
   justify-content: space-between; /* текст зліва, кнопка справа */
   align-items: center;
@@ -225,22 +225,22 @@ a{color:inherit;text-decoration:none}
   transition: all 0.3s ease-in-out;
 }
 
-.author-card:hover {
+.author1-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-.author-info h3 {
+.author1-info h3 {
   margin: 0;
   font-size: 20px;
 }
 
-.author-info .muted {
+.author1-info .muted {
   margin-top: 4px;
   color: var(--muted);
 }
 
-.author-actions .btn {
+.author1-actions .btn {
   padding: 10px 20px;
   background: linear-gradient(90deg, #8e2de2, #4a00e0);
   color: #fff;
@@ -250,7 +250,7 @@ a{color:inherit;text-decoration:none}
   transition: background 0.3s ease;
 }
 
-.author-actions .btn:hover {
+.author1-actions .btn:hover {
   background: linear-gradient(90deg, #4a00e0, #8e2de2);
 }
 
