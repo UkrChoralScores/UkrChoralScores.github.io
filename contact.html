@@ -173,26 +173,30 @@
   <div class="copy">© 2025 UkrChoralScores. Створено з ❤️ до української хорової музики.</div>
 </footer>
 <script src="js/app.js"></script>
-  <script>
-  const form = document.getElementById("contact-form");
-  const messageBox = document.getElementById("form-message");
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+  e.preventDefault(); // зупиняємо стандартне відправлення
 
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+  const form = e.target;
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch("https://formspree.io/f/xgvzjwrk", {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
     });
 
     if (response.ok) {
-      form.style.display = "none";
-      messageBox.style.display = "block";
+      form.style.display = "none"; // ховаємо форму
+      document.getElementById("form-message").style.display = "block"; // показуємо повідомлення
     } else {
-      alert("❌ Сталася помилка. Спробуйте ще раз.");
+      alert("⚠️ Сталася помилка. Спробуйте ще раз!");
     }
-  });
+  } catch (error) {
+    alert("⚠️ Помилка з'єднання.");
+  }
+});
 </script>
 </body>
 </html>
