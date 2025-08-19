@@ -1,15 +1,17 @@
-// Simple nav behaviors, burger menu, dropdown and scroll reveal
-const dropdown = document.querySelector('.dropdown');
+// Dropdown
 const dropBtn = document.querySelector('.drop-btn');
-dropBtn?.addEventListener('click', () => dropdown.classList.toggle('open'));
+const dropdown = document.querySelector('.dropdown');
 
+dropBtn?.addEventListener('click', () => {
+  dropdown.classList.toggle('open');
+});
+
+// Burger menu
 const burger = document.querySelector('.burger');
 const mainNav = document.querySelector('.main-nav');
+
 burger?.addEventListener('click', () => {
-  if(!mainNav) return;
-  mainNav.style.display = mainNav.style.display === 'flex' ? 'none' : 'flex';
-  mainNav.style.flexDirection = 'column';
-  mainNav.style.gap = '10px';
+  mainNav.classList.toggle('open');
 });
 
 // Scroll reveal for elements with .scroll-reveal children
