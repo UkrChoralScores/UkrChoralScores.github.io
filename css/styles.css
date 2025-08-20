@@ -311,7 +311,7 @@ a{color:inherit;text-decoration:none}
 }
 
 .bio-section {
-  display: flex;
+  display: float;
   align-items: flex-start;
   gap: 30px;
   max-width: 1000px;
@@ -326,7 +326,7 @@ a{color:inherit;text-decoration:none}
 
 .bio {
   flex: 1;
-  padding-right: 20px; /* невеликий відступ, щоб текст "дихав" */
+  padding-right: 0px; /* невеликий відступ, щоб текст "дихав" */
   text-align: justify;
 }
 
