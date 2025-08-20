@@ -314,7 +314,7 @@ a{color:inherit;text-decoration:none}
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  margin: 60px; /* на великих екранах */
+  margin: 40px; /* на великих екранах */
 }
 
 .portrait img {
