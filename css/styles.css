@@ -310,7 +310,7 @@ a{color:inherit;text-decoration:none}
   justify-content: center;
 }
 
-.bio-section { display: float; align-items: flex-start; gap: 30px; margin: 0px; /* на великих екранах */ } 
+.bio-section { display: shape-outside; align-items: flex-start; gap: 30px; margin: 0px; /* на великих екранах */ } 
 .portrait img { max-width: 300px; height: auto; border-radius: 8px; } 
 .bio { flex: 1; /* текст займає решту місця */ }
 
