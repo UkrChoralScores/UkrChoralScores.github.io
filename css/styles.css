@@ -315,14 +315,12 @@ a{color:inherit;text-decoration:none}
 }
 
 .portrait {
-  float: left; /* картинка стає зліва */
-  margin: 0 20px 20px 0; /* відступи */
-  shape-outside: inset(0 round 8px); /* обтікання за формою */
-  clip-path: inset(0 round 8px); /* для візуальної відповідності */
+  float: left; /* картинка ліворуч */
+  margin: 0 20px 20px 0; /* відступ справа і знизу */
 }
 
 .portrait img {
-  display: block;
+  display: block; /* щоб не було зайвих відступів */
   max-width: 300px;
   height: auto;
   border-radius: 8px;
