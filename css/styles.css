@@ -311,23 +311,32 @@ a{color:inherit;text-decoration:none}
 }
 
 .bio-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto; /* центр по сторінці */
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 .portrait {
-  flex: 0 0 280px; /* фіксована ширина картинки */
+  float: left;
+  width: 240px;
+  margin: 0 24px 12px 0; /* відступи: справа і знизу */
 }
 
-.bio {
-  flex: 1;
-  max-width: 70ch; /* обмежуємо ширину тексту */
+.portrait img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.bio h1 {
+  font-size: 1.8rem;
+  color: #6c2bd9; /* фіолетовий акцент */
+  margin-top: 0;
 }
 
 .bio p {
   text-align: justify;
-  text-justify: inter-word; /* краще вирівнювання */
+  text-justify: inter-word; /* симетричне вирівнювання */
 }
 
 /* --- АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ Біографія+портрет --- */
