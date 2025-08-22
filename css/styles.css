@@ -335,8 +335,8 @@ a{color:inherit;text-decoration:none}
   margin-bottom: 1em;
 }
 
-.bio .lead {
-  text-align: justify !important;
+section.bio-section .bio .lead {
+  text-align: justify;
 }
 
 /* --- АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ Біографія+портрет --- */
