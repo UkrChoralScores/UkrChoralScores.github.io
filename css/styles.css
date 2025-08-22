@@ -327,7 +327,16 @@ a{color:inherit;text-decoration:none}
 }
 
 .bio {
-  text-align: justify;
+  flex: 1;
+}
+
+.bio p {
+  text-align: justify;   /* всі абзаци рівняються */
+  margin-bottom: 1em;
+}
+
+.bio .lead {
+  text-align: justify;   /* спеціально для lead */
 }
 
 /* --- АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ Біографія+портрет --- */
