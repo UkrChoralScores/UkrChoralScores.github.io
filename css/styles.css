@@ -335,7 +335,8 @@ a{color:inherit;text-decoration:none}
   margin-bottom: 1em;
 }
 
-.bio .lead {
+.bio 
+.lead {
   text-align: justify;   /* спеціально для lead */
 }
 
