@@ -104,6 +104,12 @@ a{color:inherit;text-decoration:none}
   .two-col{grid-template-columns:1fr}
   .main-nav{display:none}
   .burger{display:flex}
+  .nav-actions{display:none}   /* 🔴 прибираємо пошук */
+}
+@media (max-width: 1024px){
+  .nav {
+    justify-content: space-between; /* бренд зліва, бургер справа */
+  }
 }
 @media (max-width: 640px){
   .cards,.grid-3{grid-template-columns:1fr}
@@ -344,4 +350,18 @@ a{color:inherit;text-decoration:none}
   .bio {
     text-align: justify; /* щоб текст гарно розподілявся */
   }
+}
+
+.main-nav.mobile {
+  display:flex !important;
+  flex-direction:column;
+  gap:12px;
+  background:#fff;
+  position:absolute;
+  top:60px;
+  left:0;
+  right:0;
+  padding:20px;
+  border-top:1px solid #eef0f5;
+  box-shadow: var(--shadow);
 }
