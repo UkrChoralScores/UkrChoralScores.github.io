@@ -389,3 +389,32 @@ a{color:inherit;text-decoration:none}
     padding: 10px;
   }
 }
+
+/* 🔽 Адаптив */
+@media (max-width: 768px) {
+  .hero1-text h1 {
+    font-size: 32px;
+  }
+
+  .hero1-text p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .hero1-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero1-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero1-btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
