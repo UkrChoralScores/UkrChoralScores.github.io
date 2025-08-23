@@ -365,3 +365,27 @@ a{color:inherit;text-decoration:none}
   border-top:1px solid #eef0f5;
   box-shadow: var(--shadow);
 }
+
+/* Мобільна адаптація футера */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;   /* усі блоки стають у стовпчик */
+    gap: 24px;
+  }
+
+  .social-contacts {
+    flex-direction: column;  /* QR-коди йдуть один під одним */
+    gap: 20px;
+    align-items: center;     /* вирівнюємо по центру */
+  }
+
+  .contact-item img {
+    max-width: 160px;        /* обмежимо розмір QR-кодів */
+    height: auto;
+  }
+
+  .copy {
+    font-size: 14px;         /* дрібніший текст на мобільному */
+    padding: 10px;
+  }
+}
