@@ -311,14 +311,14 @@ a{color:inherit;text-decoration:none}
 }
 
 .bio-section {
-  max-width: 1000px;
-  margin: 0 auto 40px auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .portrait img {
   float: left;              /* Фото зліва */
   margin: 0 20px 20px 0;    /* Відступ справа і знизу */
-  width: 250px;             /* Ширина фото */
+  width: 450px;             /* Ширина фото */
   height: auto;             /* Автоматична висота */
   border-radius: 10px;      /* (необов’язково) округлення кутів */
 }
