@@ -6,10 +6,7 @@ dropBtn?.addEventListener('click', () => dropdown.classList.toggle('open'));
 const burger = document.querySelector('.burger');
 const mainNav = document.querySelector('.main-nav');
 burger?.addEventListener('click', () => {
-  if(!mainNav) return;
-  mainNav.style.display = mainNav.style.display === 'flex' ? 'none' : 'flex';
-  mainNav.style.flexDirection = 'column';
-  mainNav.style.gap = '10px';
+  mainNav?.classList.toggle('mobile');
 });
 
 // Scroll reveal for elements with .scroll-reveal children
