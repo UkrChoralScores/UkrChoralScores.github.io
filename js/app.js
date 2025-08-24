@@ -35,3 +35,15 @@ function enableLocalSearch(containerSelector, inputSelector){
   });
 }
 enableLocalSearch('.grid-3,.grid-4', '.search input');
+
+// Кнопки партитур
+  const slider = document.querySelector('.scores-slider');
+  const btnPrev = document.querySelector('.slider-btn.prev');
+  const btnNext = document.querySelector('.slider-btn.next');
+
+  btnNext.addEventListener('click', () => {
+    slider.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+  btnPrev.addEventListener('click', () => {
+    slider.scrollBy({ left: -300, behavior: 'smooth' });
+  });
