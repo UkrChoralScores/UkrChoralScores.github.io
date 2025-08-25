@@ -612,54 +612,71 @@ a{color:inherit;text-decoration:none}
 }
 
 @media (max-width: 768px) {
-  /* Вертикальний список партитур */
   .grid-5 {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  /* Кожна партитура: flex row, картинка зліва, текст праворуч */
   .product1 {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 12px;
-    padding: 6px;
+    background: #fff;
+    border: 1px solid #eef0f5;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: var(--shadow);
   }
 
   .product1 img {
-    width: 100px;       /* зменшене зображення */
+    width: 90px;
     height: auto;
     flex-shrink: 0;
     border-radius: 8px;
   }
 
-  /* Всі інші елементи після картинки: h4, p, .price, .card-actions1 */
-  .product1 h4,
-  .product1 p,
-  .product1 .price,
-  .product1 .card-actions1 {
-    flex: 1;            /* займає залишкову ширину */
+  .product1 .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  .product1 h4 {
+    font-size: 16px;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+
+  .product1 p.muted {
+    font-size: 13px;
+    margin: 0 0 6px;
+  }
+
+  .product1 .price {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--muted);
   }
 
   .card-actions1 {
     display: flex;
     gap: 6px;
-    flex-wrap: wrap;    /* кнопки не вилітають за межі */
+    flex-wrap: wrap;
   }
 
-  /* Модальне вікно */
-  .modal1-content {
-    width: 95%;
-    max-width: 95%;
-    height: 90vh;
-    padding: 12px;
+  .card-actions1 .btn {
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 8px;
   }
 
-  .modal1 iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
+  .card-actions1 .btn-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
   }
 }
