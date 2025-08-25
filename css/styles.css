@@ -610,3 +610,38 @@ a{color:inherit;text-decoration:none}
   cursor: pointer;
   font-size: 18px;
 }
+
+/* Модальне вікно для мобільних */
+@media (max-width: 768px) {
+  .grid-5 {
+    display: flex;
+    flex-direction: column; /* один під одним */
+    gap: 12px;
+  }
+
+  .product1 {
+    flex-direction: row; /* зображення зліва, текст праворуч */
+    align-items: flex-start;
+  }
+
+  .product1 img {
+    width: 100px; /* менший розмір на мобільних */
+    margin-right: 12px;
+  }
+
+  .product1-content {
+    flex: 1; /* займає всю залишкову ширину */
+  }
+
+  /* Модальне вікно на мобільних */
+  .modal1-content {
+    width: 95%;
+    max-width: 95%;
+    height: 90vh; /* висота майже весь екран */
+    padding: 12px;
+  }
+
+  .modal1 iframe {
+    height: 100%;
+  }
+}
