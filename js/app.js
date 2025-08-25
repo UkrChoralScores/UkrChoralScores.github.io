@@ -47,3 +47,21 @@ enableLocalSearch('.grid-3,.grid-4', '.search input');
   btnPrev.addEventListener('click', () => {
     slider.scrollBy({ left: -300, behavior: 'smooth' });
   });
+
+const scores12 = document.querySelector(".scores12");
+const nextBtn12 = document.getElementById("next12");
+const prevBtn12 = document.getElementById("prev12");
+
+let scrollAmount12 = 0;
+const cardWidth12 = 236; // ширина картки + gap
+
+nextBtn12.addEventListener("click", () => {
+  scrollAmount12 -= cardWidth12;
+  scores12.style.transform = `translateX(${scrollAmount12}px)`;
+});
+
+prevBtn12.addEventListener("click", () => {
+  scrollAmount12 += cardWidth12;
+  if (scrollAmount12 > 0) scrollAmount12 = 0;
+  scores12.style.transform = `translateX(${scrollAmount12}px)`;
+});
