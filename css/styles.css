@@ -621,8 +621,8 @@ a{color:inherit;text-decoration:none}
 
  .product1 {
     display: flex;
-    flex-direction: column; /* або row, як вам зручно */
-    align-items: center; 
+    flex-direction: row; /* або row, як вам зручно */
+    align-items: flex-start; 
     gap: 12px;
 
     /* Прибираємо контейнерність */
