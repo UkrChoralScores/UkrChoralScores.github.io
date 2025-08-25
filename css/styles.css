@@ -611,7 +611,8 @@ a{color:inherit;text-decoration:none}
   font-size: 18px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  /* одна картка на рядок */
   .grid-5 {
     display: flex;
     flex-direction: column;
@@ -621,42 +622,41 @@ a{color:inherit;text-decoration:none}
   .product1 {
     display: flex;
     flex-direction: row;
-    align-items: stretch;       /* всі елементи рівної висоти */
+    align-items: flex-start;
     gap: 12px;
-    background: #fff;
-    border: 1px solid #eef0f5;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
-    padding: 10px;
-    box-shadow: var(--shadow);
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
 
   .product1 img {
-    width: 90px;
+    width: 110px;
     height: auto;
     object-fit: cover;
-    border-radius: 6px;
     flex-shrink: 0;
+    border-radius: 6px;
   }
 
   .product1 .info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* текст зверху, кнопки знизу */
+    justify-content: space-between;
     flex: 1;
-    min-width: 0; /* щоб текст не ламав верстку */
+    min-width: 0;
   }
 
   .product1 h4 {
     font-size: 16px;
-    margin: 0 0 4px;
     font-weight: 600;
-    line-height: 1.2;
+    margin: 0 0 4px;
   }
 
   .product1 p.muted {
     font-size: 13px;
-    margin: 0 0 6px;
     color: #666;
+    margin: 0 0 6px;
   }
 
   .product1 .price {
@@ -668,20 +668,24 @@ a{color:inherit;text-decoration:none}
 
   .card-actions1 {
     display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-top: auto; /* завжди притискає кнопки вниз */
+    gap: 8px;
+    margin-top: auto; /* кнопки йдуть вниз */
   }
 
   .card-actions1 .btn {
     font-size: 13px;
     padding: 6px 12px;
-    border-radius: 8px;
+    border-radius: 6px;
+    background: #f3f4f6;
   }
 
   .card-actions1 .btn-icon {
     width: 32px;
     height: 32px;
     font-size: 14px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-}
