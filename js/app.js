@@ -65,3 +65,29 @@ prevBtn12.addEventListener("click", () => {
   if (scrollAmount12 > 0) scrollAmount12 = 0;
   scores12.style.transform = `translateX(${scrollAmount12}px)`;
 });
+
+// Вибираємо всі кнопки "Переглянути"
+const viewButtons = document.querySelectorAll('.product1 .btn');
+
+const modal = document.getElementById('modal1');
+const iframe = document.getElementById('modal1-iframe');
+const closeBtn = document.querySelector('.close1-btn');
+
+viewButtons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Беремо URL файлу PDF зі свого блоку, наприклад з data-атрибуту
+    const product = button.closest('.product1');
+    const pdfUrl = product.querySelector('.price').textContent.trim(); 
+    // 👉 Якщо у price зараз "PDF", краще замінити на data-pdf-url="assets/notes1.pdf"
+    
+    iframe.src = pdfUrl; // вставляємо у iframe
+    modal.classList.remove('hidden'); // показуємо модалку
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  iframe.src = ''; // очищаємо iframe
+});
