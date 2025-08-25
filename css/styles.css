@@ -390,35 +390,6 @@ a{color:inherit;text-decoration:none}
   }
 }
 
-/* 🔽 Адаптив */
-@media (max-width: 768px) {
-  .hero1-text h1 {
-    font-size: 16px;
-  }
-
-  .hero1-text p {
-    font-size: 8px;
-    padding: 0 10px;
-  }
-
-  .hero1-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .hero1-buttons {
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .hero1-btn {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-}
-
 .container12 {
   max-width: 1200px;
   margin: 40px auto;
@@ -690,3 +661,73 @@ a{color:inherit;text-decoration:none}
     align-items: center;
     justify-content: center;
   }
+
+/* 🔽 Адаптив */
+@media (max-width: 768px) {
+  .hero1-text h1 {
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .hero1-text p {
+    font-size: 14px;
+    text-align: center;
+    padding: 0 15px;
+    line-height: 1.4;
+  }
+
+  .hero1-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .hero1-stats .stat h2 {
+    font-size: 22px;
+  }
+
+  .hero1-stats .stat p {
+    font-size: 13px;
+  }
+
+  .hero1-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hero1-btn {
+    width: 100%;
+    max-width: 280px;
+    font-size: 14px;
+    padding: 10px 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero1-text h1 {
+    font-size: 22px;
+  }
+
+  .hero1-text p {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .hero1-stats .stat h2 {
+    font-size: 20px;
+  }
+
+  .hero1-stats .stat p {
+    font-size: 12px;
+  }
+
+  .hero1-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
