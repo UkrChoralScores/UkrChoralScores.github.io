@@ -560,3 +560,16 @@ a{color:inherit;text-decoration:none}
 .card-actions1 {
   margin-top: auto;              /* прибиває блок кнопок вниз */
 }
+
+.product1 h4 {
+  margin: 6px 0 4px; /* менші відступи зверху і знизу */
+}
+
+.product1 p.muted {
+  margin: 2px 0 6px; /* зменшуємо вертикальний проміжок */
+  font-size: 12px;
+}
+
+.price {
+  margin: 4px 0 8px; /* зменшений відступ */
+}
