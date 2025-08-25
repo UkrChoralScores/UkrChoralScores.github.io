@@ -66,8 +66,8 @@ prevBtn12.addEventListener("click", () => {
   scores12.style.transform = `translateX(${scrollAmount12}px)`;
 });
 
-// Вибираємо всі кнопки "Переглянути" у товарах
-const viewButtons = document.querySelectorAll('.product1 .btn');
+// Вибираємо всі кнопки "Переглянути"
+const viewButtons = document.querySelectorAll('.btn.view-btn');
 
 // Вибираємо модальне вікно та iframe
 const modal = document.getElementById('modal1');
@@ -78,11 +78,8 @@ viewButtons.forEach(button => {
   button.addEventListener('click', function(e) {
     e.preventDefault();
     
-    // Беремо URL PDF з data-атрибуту у .price
-    const product = button.closest('.product1');
-    const pdfUrl = product.querySelector('.price').dataset.pdfUrl;
-    
-    if(!pdfUrl) return; // якщо URL не вказаний, нічого не робимо
+    const pdfUrl = button.dataset.pdfUrl; // беремо URL з кнопки
+    if(!pdfUrl) return;
     
     iframe.src = pdfUrl;         // вставляємо URL у iframe
     modal.classList.remove('hidden'); // показуємо модалку
