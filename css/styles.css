@@ -541,7 +541,7 @@ a{color:inherit;text-decoration:none}
 
 .product1 {
   padding: 12px;          /* менші внутрішні відступи */
-  font-size: 14px;        /* трохи дрібніший текст */
+  font-size: 15px;        /* трохи дрібніший текст */
   display: flex;
   flex-direction: column;        /* вертикальне розташування */
   justify-content: space-between; /* розтягує вміст */
@@ -553,7 +553,7 @@ a{color:inherit;text-decoration:none}
 }
 .product1 img {
   border-radius: 10px;
-  max-height: 220px;      /* обмежує висоту зображення */
+  max-height: 300px;      /* обмежує висоту зображення */
   object-fit: cover;
 }
 
