@@ -532,3 +532,9 @@ a{color:inherit;text-decoration:none}
 .download12:hover {
   background: #16a34a;
 }
+
+.grid-5 {
+  display: grid;
+  gap: 20px; /* відстань між партитурами */
+  grid-template-columns: repeat(5, 1fr); /* 5 у ряд */
+}
