@@ -66,9 +66,10 @@ prevBtn12.addEventListener("click", () => {
   scores12.style.transform = `translateX(${scrollAmount12}px)`;
 });
 
-// Вибираємо всі кнопки "Переглянути"
+// Вибираємо всі кнопки "Переглянути" у товарах
 const viewButtons = document.querySelectorAll('.product1 .btn');
 
+// Вибираємо модальне вікно та iframe
 const modal = document.getElementById('modal1');
 const iframe = document.getElementById('modal1-iframe');
 const closeBtn = document.querySelector('.close1-btn');
@@ -77,17 +78,27 @@ viewButtons.forEach(button => {
   button.addEventListener('click', function(e) {
     e.preventDefault();
     
-    // Беремо URL файлу PDF зі свого блоку, наприклад з data-атрибуту
+    // Беремо URL PDF з data-атрибуту у .price
     const product = button.closest('.product1');
-    const pdfUrl = product.querySelector('.price').textContent.trim(); 
-    // 👉 Якщо у price зараз "PDF", краще замінити на data-pdf-url="assets/notes1.pdf"
+    const pdfUrl = product.querySelector('.price').dataset.pdfUrl;
     
-    iframe.src = pdfUrl; // вставляємо у iframe
+    if(!pdfUrl) return; // якщо URL не вказаний, нічого не робимо
+    
+    iframe.src = pdfUrl;         // вставляємо URL у iframe
     modal.classList.remove('hidden'); // показуємо модалку
   });
 });
 
+// Закриття модалки
 closeBtn.addEventListener('click', () => {
   modal.classList.add('hidden');
   iframe.src = ''; // очищаємо iframe
+});
+
+// Закриття при натисканні на фон модалки
+modal.addEventListener('click', (e) => {
+  if(e.target === modal){
+    modal.classList.add('hidden');
+    iframe.src = '';
+  }
 });
