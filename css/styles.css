@@ -419,98 +419,116 @@ a{color:inherit;text-decoration:none}
   }
 }
 
-.scores-section { padding: 40px 0; }
-.scores-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #1b1750;
+.container12 {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.scores-slider-wrapper {
-  position: relative;
+.header12 {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
 }
-.scores-slider {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-.scores-slider::-webkit-scrollbar { display: none; }
 
-.score-item {
-  flex: 0 0 250px;
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  line-height: 1.4;
+.header12 h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3b2062;
 }
-.score-thumb {
-  position: relative;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #fff;
-}
-.score-thumb img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.badge {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 4px;
-  background: #e0e0e0;
-  color: #222;
-}
-.badge.level { background: #b5f2c3; color:#065f2b; }        /* Beginner */
-.badge.intermediate { background: #f7d59c; color:#7a4b00; } /* Intermediate */
-.badge.pro { background: #4a00e0; color:#fff; border-radius:4px; padding:2px 6px; }
-.badge.flag { left: 8px; right:auto; background: transparent; font-size:16px; }
-.badge.official { background:#4a00e0; color:#fff; border-radius:4px; }
 
-.score-title {
-  margin-top: 8px;
-  font-weight: 600;
-  color: #3a2f9a;
-  text-decoration: none;
-  font-size: 15px;
-}
-.score-title:hover { text-decoration: underline; }
-
-.score-author { margin-top: 4px; color: #444; font-size: 13px; }
-.score-meta { margin-top: 4px; color: #666; font-size: 12px; }
-.score-rating { margin-top: 4px; color: #333; font-size: 13px; }
-.score-tags { margin-top: 6px; color: #333; font-size: 12px; font-weight: 600; }
-
-/* Стрілки */
-.scores-btn {
-  position: absolute;
-  top: 35%;
-  transform: translateY(-50%);
+.arrows12 button {
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  padding: 6px 12px;
+  margin-left: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
-.scores-btn.prev { left: -20px; }
-.scores-btn.next { right: -20px; }
+.arrows12 button:hover {
+  background: #eee;
+}
 
-/* 📱 Адаптив */
-@media (max-width: 768px) {
-  .score1-card { min-width: 80%; }
-  .slider1-btn.prev { left: 5px; }
-  .slider1-btn.next { right: 5px; }
+.scores12-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.scores12 {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.score-card12 {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 220px;
+  max-width: 220px;
+  flex-shrink: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.score-card12:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.score-card12 img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.score-info12 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.score-info12 h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: #222;
+}
+.score-info12 p {
+  font-size: 12px;
+  color: #555;
+}
+
+.score-buttons12 {
+  display: flex;
+  gap: 6px;
+}
+
+.score-buttons12 button {
+  flex: 1;
+  font-size: 12px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view12 {
+  background: #3b82f6;
+  color: #fff;
+}
+.view12:hover {
+  background: #2563eb;
+}
+
+.download12 {
+  background: #22c55e;
+  color: #fff;
+}
+.download12:hover {
+  background: #16a34a;
 }
