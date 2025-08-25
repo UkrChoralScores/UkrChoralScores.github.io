@@ -625,7 +625,7 @@ a{color:inherit;text-decoration:none}
   }
 
   .product1 img {
-    width: 100px; /* менший розмір на мобільних */
+    width: 250px; /* менший розмір на мобільних */
     margin-right: 12px;
   }
 
@@ -644,4 +644,3 @@ a{color:inherit;text-decoration:none}
   .modal1 iframe {
     height: 100%;
   }
-}
