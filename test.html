@@ -4,7 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recently viewed • Scores</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #222;
+    }
+
+    .container12 {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .header12 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .header12 h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3b2062;
+    }
+
+    .arrows12 button {
+      background: #fff;
+      border: 1px solid #ccc;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 6px 12px;
+      margin-left: 5px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .arrows12 button:hover {
+      background: #eee;
+    }
+
+    .scores12-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .scores12 {
+      display: flex;
+      gap: 16px;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .score-card12 {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      min-width: 220px;
+      max-width: 220px;
+      flex-shrink: 0;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .score-card12:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .score-card12 img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .score-info12 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .score-info12 h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: #222;
+    }
+    .score-info12 p {
+      font-size: 12px;
+      color: #555;
+      margin: 0;
+    }
+
+    .score-buttons12 {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .score-buttons12 button {
+      flex: 1;
+      font-size: 12px;
+      padding: 6px 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view12 {
+      background: #3b82f6;
+      color: #fff;
+    }
+    .view12:hover {
+      background: #2563eb;
+    }
+
+    .download12 {
+      background: #22c55e;
+      color: #fff;
+    }
+    .download12:hover {
+      background: #16a34a;
+    }
+  </style>
 </head>
 <body>
   <section class="container12">
@@ -19,7 +143,7 @@
     <div class="scores12-wrapper">
       <div class="scores12">
 
-        <!-- Одна партитура -->
+        <!-- Картка 1 -->
         <div class="score-card12">
           <img src="score1.jpg" alt="Score preview">
           <div class="score-info12">
@@ -32,7 +156,7 @@
           </div>
         </div>
 
-        <!-- Копії карток -->
+        <!-- Картка 2 -->
         <div class="score-card12">
           <img src="score2.jpg" alt="Score preview">
           <div class="score-info12">
@@ -45,6 +169,7 @@
           </div>
         </div>
 
+        <!-- Картка 3 -->
         <div class="score-card12">
           <img src="score3.jpg" alt="Score preview">
           <div class="score-info12">
@@ -57,12 +182,67 @@
           </div>
         </div>
 
-        <!-- Додати ще картки за потребою -->
+        <!-- Картка 4 -->
+        <div class="score-card12">
+          <img src="score4.jpg" alt="Score preview">
+          <div class="score-info12">
+            <h3>Ніч яка місячна – Лисенко</h3>
+            <p>Solo Piano • Piano</p>
+          </div>
+          <div class="score-buttons12">
+            <button class="view12">Переглянути</button>
+            <button class="download12">Завантажити</button>
+          </div>
+        </div>
+
+        <!-- Картка 5 -->
+        <div class="score-card12">
+          <img src="score5.jpg" alt="Score preview">
+          <div class="score-info12">
+            <h3>So full of stars is the night</h3>
+            <p>Violin • Viola • Guitar</p>
+          </div>
+          <div class="score-buttons12">
+            <button class="view12">Переглянути</button>
+            <button class="download12">Завантажити</button>
+          </div>
+        </div>
+
+        <!-- Картка 6 -->
+        <div class="score-card12">
+          <img src="score6.jpg" alt="Score preview">
+          <div class="score-info12">
+            <h3>Ніч яка місячна (Arr. AlishHarmony)</h3>
+            <p>Piano • Voice • Guitar</p>
+          </div>
+          <div class="score-buttons12">
+            <button class="view12">Переглянути</button>
+            <button class="download12">Завантажити</button>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    const scores12 = document.querySelector(".scores12");
+    const nextBtn12 = document.getElementById("next12");
+    const prevBtn12 = document.getElementById("prev12");
+
+    let scrollAmount12 = 0;
+    const cardWidth12 = 236; // ширина картки + gap
+
+    nextBtn12.addEventListener("click", () => {
+      scrollAmount12 -= cardWidth12;
+      scores12.style.transform = `translateX(${scrollAmount12}px)`;
+    });
+
+    prevBtn12.addEventListener("click", () => {
+      scrollAmount12 += cardWidth12;
+      if (scrollAmount12 > 0) scrollAmount12 = 0;
+      scores12.style.transform = `translateX(${scrollAmount12}px)`;
+    });
+  </script>
 </body>
 </html>
