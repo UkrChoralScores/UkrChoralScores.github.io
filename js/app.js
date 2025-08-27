@@ -66,29 +66,23 @@ prevBtn12.addEventListener("click", () => {
   scores12.style.transform = `translateX(${scrollAmount12}px)`;
 });
 
- const modal = document.querySelector('#viewer-modal');
+// Modal PDF viewer
+const modal = document.querySelector('#viewer-modal');
 const modalFrame = document.querySelector('#viewer-frame');
 const modalTitle = document.querySelector('#viewer-title');
-
 document.querySelectorAll('[data-view]').forEach(btn => {
   btn.addEventListener('click', () => {
     const pdf = btn.getAttribute('data-view');
     const title = btn.getAttribute('data-title') || 'Перегляд партитури';
-    if (modal && modalFrame) {
+    if(modal && modalFrame){
       modalFrame.src = pdf;
-      if (modalTitle) modalTitle.textContent = title;
+      if(modalTitle) modalTitle.textContent = title;
       modal.classList.add('open');
     } else {
       window.open(pdf, '_blank');
     }
   });
 });
-
-document.querySelectorAll('[data-close]').forEach(el => 
-  el.addEventListener('click', () => {
-    if (modal) { 
-      modal.classList.remove('open'); 
-      modalFrame.src = ''; 
-    }
-  })
-);
+document.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', () => {
+  if(modal){ modal.classList.remove('open'); modalFrame.src = ''; }
+}));
