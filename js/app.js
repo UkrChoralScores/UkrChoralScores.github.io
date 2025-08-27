@@ -66,36 +66,32 @@ prevBtn12.addEventListener("click", () => {
   scores12.style.transform = `translateX(${scrollAmount12}px)`;
 });
 
-// Вибираємо всі кнопки "Переглянути"
-const viewButtons = document.querySelectorAll('.btn.view-btn');
+  // Отримуємо елементи(перегляд партитур)
+  const pdfModal = document.getElementById("pdfModal");
+  const pdfFrame = document.getElementById("pdfFrame");
+  const closePdf = document.getElementById("closePdf");
 
-// Вибираємо модальне вікно та iframe
-const modal = document.getElementById('modal1');
-const iframe = document.getElementById('modal1-iframe');
-const closeBtn = document.querySelector('.close1-btn');
-
-viewButtons.forEach(button => {
-  button.addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    const pdfUrl = button.dataset.pdfUrl; // беремо URL з кнопки
-    if(!pdfUrl) return;
-    
-    iframe.src = pdfUrl;         // вставляємо URL у iframe
-    modal.classList.remove('hidden'); // показуємо модалку
+  // Вішаємо подію на всі кнопки "Переглянути"
+  document.querySelectorAll(".card-actions1 .btn").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+      // тут можна задати шлях до конкретного PDF
+      const pdfUrl = this.getAttribute("data-pdf"); 
+      pdfFrame.src = pdfUrl; 
+      pdfModal.classList.remove("hidden");
+    });
   });
-});
 
-// Закриття модалки
-closeBtn.addEventListener('click', () => {
-  modal.classList.add('hidden');
-  iframe.src = ''; // очищаємо iframe
-});
+  // Закриття
+  closePdf.addEventListener("click", () => {
+    pdfModal.classList.add("hidden");
+    pdfFrame.src = ""; // очистка
+  });
 
-// Закриття при натисканні на фон модалки
-modal.addEventListener('click', (e) => {
-  if(e.target === modal){
-    modal.classList.add('hidden');
-    iframe.src = '';
-  }
-});
+  // Закриття кліком на фон
+  pdfModal.addEventListener("click", (e) => {
+    if (e.target === pdfModal) {
+      pdfModal.classList.add("hidden");
+      pdfFrame.src = "";
+    }
+  });
