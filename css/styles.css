@@ -545,28 +545,14 @@ a{color:inherit;text-decoration:none}
   margin: 4px 0 8px; /* зменшений відступ */
 }
 
-.modal1 {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal1.hidden {
-  display: none;
-}
-
-.modal1-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 900px;
-  width: 90%;
-  position: relative;
-}
+/* Modal viewer */
+.modal1{ position: fixed; inset:0; display:none; place-items: center; background: rgba(0,0,0,0.35); z-index:100; padding: 20px; }
+.modal1.open{ display:grid; }
+.modal1 .panel{ width: min(1100px, 96vw); height: min(85vh, 900px); background: #fff; border:1px solid var(--border); border-radius: 16px; overflow:hidden; display:flex; flex-direction:column; }
+.modal1 header{ display:flex; align-items:center; justify-content: space-between; padding: 8px 12px; border-bottom:1px solid var(--border); background:#f7f7fb; }
+.modal1 header h3{ margin:0; font-weight:600; }
+.modal1 .content{ flex:1; }
+.modal1 .content iframe{ width:100%; height:100%; border:0; background:#fff; }
 
 .close1-btn {
   position: absolute;
@@ -733,23 +719,25 @@ a{color:inherit;text-decoration:none}
 }
 
 .video1-section {
-  margin: auto;
+  width: 100%;         /* на всю ширину */
+  margin: 40px auto;   /* відступи зверху/знизу */
+  padding: 0;          /* без бокових відступів */
 }
 
 .video1-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* відступи між відео */
+  grid-template-columns: repeat(3, 1fr); /* 3 відео в ряд */
+  gap: 20px; /* відстань тільки між відео */
 }
 
-.video1-item iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9; /* зберігає пропорції */
-  border-radius: 12px; /* закруглені кути для краси */
+.video1-grid iframe {
+  width: 100%;            /* iframe розтягується по ширині колонки */
+  aspect-ratio: 16 / 9;   /* пропорції 16:9 */
+  border-radius: 12px;
   border: none;
 }
 
-/* 🔽 Адаптив для телефону */
+/* 🔽 адаптив: на телефонах стає 1 відео */
 @media (max-width: 900px) {
   .video1-grid {
     grid-template-columns: 1fr;
