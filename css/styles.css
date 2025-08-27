@@ -260,29 +260,14 @@ a{color:inherit;text-decoration:none}
   background: linear-gradient(90deg, #4a00e0, #8e2de2);
 }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal.hidden {
-  display: none;
-}
-
-.modal-content {
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 20px;
-  position: relative;
-  max-width: 900px;
-  width: 90%;
-  box-shadow: var(--shadow-lg);
-}
+/* Modal viewer */
+.modal1{ position: fixed; inset:0; display:none; place-items: center; background: rgba(0,0,0,0.35); z-index:100; padding: 20px; }
+.modal1.open{ display:grid; }
+.modal1 .panel{ width: min(1100px, 96vw); height: min(85vh, 900px); background: #fff; border:1px solid var(--border); border-radius: 16px; overflow:hidden; display:flex; flex-direction:column; }
+.modal1 header{ display:flex; align-items:center; justify-content: space-between; padding: 8px 12px; border-bottom:1px solid var(--border); background:#f7f7fb; }
+.modal1 header h3{ margin:0; font-weight:600; }
+.modal1 .content{ flex:1; }
+.modal1 .content iframe{ width:100%; height:100%; border:0; background:#fff; }
 
 .video-wrapper {
   position: relative;
@@ -544,15 +529,6 @@ a{color:inherit;text-decoration:none}
 .price {
   margin: 4px 0 8px; /* зменшений відступ */
 }
-
-/* Modal viewer */
-.modal1{ position: fixed; inset:0; display:none; place-items: center; background: rgba(0,0,0,0.35); z-index:100; padding: 20px; }
-.modal1.open{ display:grid; }
-.modal1 .panel{ width: min(1100px, 96vw); height: min(85vh, 900px); background: #fff; border:1px solid var(--border); border-radius: 16px; overflow:hidden; display:flex; flex-direction:column; }
-.modal1 header{ display:flex; align-items:center; justify-content: space-between; padding: 8px 12px; border-bottom:1px solid var(--border); background:#f7f7fb; }
-.modal1 header h3{ margin:0; font-weight:600; }
-.modal1 .content{ flex:1; }
-.modal1 .content iframe{ width:100%; height:100%; border:0; background:#fff; }
 
 .close1-btn {
   position: absolute;
