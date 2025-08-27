@@ -731,3 +731,27 @@ a{color:inherit;text-decoration:none}
     padding: 8px 12px;
   }
 }
+
+.video1-section {
+  margin: 40px auto;
+}
+
+.video1-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* відступи між відео */
+}
+
+.video1-item iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* зберігає пропорції */
+  border-radius: 12px; /* закруглені кути для краси */
+  border: none;
+}
+
+/* 🔽 Адаптив для телефону */
+@media (max-width: 900px) {
+  .video1-grid {
+    grid-template-columns: 1fr;
+  }
+}
