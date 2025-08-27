@@ -94,7 +94,11 @@
         <h4>Ніч яка місячна</h4>
         <p class="muted">Мелодія </p>
         <div class="price">PDF</div>
-        <div class="card-actions1"><a class="btn" href="#" data-pdf="scores/nich.pdf">Переглянути</a><a class="btn-icon" href="#" title="Завантажити">⬇</a></div>
+        <div class="card-actions1">
+                      <button class="btn" 
+                    data-view="assets/pdf/nich_yaka_misyachna.pdf" 
+                    data-title="Ніч яка місячна">Переглянути</button>
+          <a class="btn-icon" href="#" title="Завантажити">⬇</a></div>
         </div>
       </article>
       <article class="product1">
@@ -140,11 +144,11 @@
   </div>
 </section>
 
-  <!-- Модальне вікно для PDF -->
-<div id="pdfModal" class="modal1 hidden">
+<div id="viewer-modal" class="modal1">
   <div class="modal1-content">
-    <button class="close1-btn" id="closePdf">×</button>
-    <iframe id="pdfFrame" src="" width="100%" height="600px" style="border:none;"></iframe>
+    <button data-close class="close1-btn">×</button>
+    <h3 id="viewer-title"></h3>
+    <iframe id="viewer-frame" src="" width="100%" height="600px" style="border:none;"></iframe>
   </div>
 </div>
 
