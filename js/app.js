@@ -66,32 +66,29 @@ prevBtn12.addEventListener("click", () => {
   scores12.style.transform = `translateX(${scrollAmount12}px)`;
 });
 
-  // Отримуємо елементи(перегляд партитур)
-  const pdfModal = document.getElementById("pdfModal");
-  const pdfFrame = document.getElementById("pdfFrame");
-  const closePdf = document.getElementById("closePdf");
+ const modal = document.querySelector('#viewer-modal');
+const modalFrame = document.querySelector('#viewer-frame');
+const modalTitle = document.querySelector('#viewer-title');
 
-  // Вішаємо подію на всі кнопки "Переглянути"
-  document.querySelectorAll(".card-actions1 .btn").forEach(btn => {
-    btn.addEventListener("click", function(e) {
-      e.preventDefault();
-      // тут можна задати шлях до конкретного PDF
-      const pdfUrl = this.getAttribute("data-pdf"); 
-      pdfFrame.src = pdfUrl; 
-      pdfModal.classList.remove("hidden");
-    });
-  });
-
-  // Закриття
-  closePdf.addEventListener("click", () => {
-    pdfModal.classList.add("hidden");
-    pdfFrame.src = ""; // очистка
-  });
-
-  // Закриття кліком на фон
-  pdfModal.addEventListener("click", (e) => {
-    if (e.target === pdfModal) {
-      pdfModal.classList.add("hidden");
-      pdfFrame.src = "";
+document.querySelectorAll('[data-view]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const pdf = btn.getAttribute('data-view');
+    const title = btn.getAttribute('data-title') || 'Перегляд партитури';
+    if (modal && modalFrame) {
+      modalFrame.src = pdf;
+      if (modalTitle) modalTitle.textContent = title;
+      modal.classList.add('open');
+    } else {
+      window.open(pdf, '_blank');
     }
   });
+});
+
+document.querySelectorAll('[data-close]').forEach(el => 
+  el.addEventListener('click', () => {
+    if (modal) { 
+      modal.classList.remove('open'); 
+      modalFrame.src = ''; 
+    }
+  })
+);
