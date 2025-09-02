@@ -219,6 +219,35 @@
     font-weight: bold;
   }
 </style>
+
+<style>
+.video1-section {
+  width: 95%;              /* робимо ширше */
+  max-width: 1400px;       /* більше максимальне значення */
+  margin: 40px auto;
+}
+
+.video1-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 25px;                             /* відстань між ними */
+}
+
+.video1-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* пропорції відео */
+  border-radius: 12px;
+  border: none;
+  height: auto;
+}
+
+/* адаптив */
+@media (max-width: 900px) {
+  .video1-grid {
+    grid-template-columns: 1fr; /* на телефонах в один стовпець */
+  }
+}
+</style>
   </div>
   <div style="height:100px;"></div>
   <div class="copy">© 2025 UkrChoralScores. Створено з ❤️ до української хорової музики.</div>
